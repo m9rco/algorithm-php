@@ -6,20 +6,20 @@
 
 **简易结构**
         
-├──Package
-│    ├── Sort  排序篇
-│    │    ├── BubbleSort.php  [冒泡排序](https://github.com/PuShaoWei/arithmetic-php/package/Sort/BubbleSort.php)
-│    │    ├── QuickSort.php   [快速排序](https://github.com/PuShaoWei/arithmetic-php/package/Sort/QuickSort.php)
-│    │    └── MergeSort.php   [归并排序](https://github.com/PuShaoWei/arithmetic-php/package/Sort/MergeSort.php)
-│    │ 
-│    ├── Query 查询篇
-│    │    ├── BinaryQuery.php [二分查找](https://github.com/PuShaoWei/arithmetic-php/package/Sort/BinaryQuery.php)
-│    │    └── 快速查找 
-│    │     
-│    └── Other 其他 
-│     
-├──LICENSE 
-└──README.md
+    ├──Package
+    │    ├── Sort  排序篇
+    │    │    ├── BubbleSort.php  冒泡排序
+    │    │    ├── QuickSort.php   快速排序
+    │    │    └── MergeSort.php   归并排序
+    │    │ 
+    │    ├── Query 查询篇
+    │    │    ├── BinaryQuery.php 二分查找
+    │    │    └── 快速查找 
+    │    │     
+    │    └── Other 其他 
+    │     
+    ├──LICENSE 
+    └──README.md
 
 ## 一起进步学习
  1. Fork 我的项目
