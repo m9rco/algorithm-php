@@ -19,6 +19,7 @@
     │    ├── Sort  排序篇
     │    │    ├── BubbleSort.php  冒泡排序
     │    │    ├── QuickSort.php   快速排序
+    │    │    ├── ShellSort.php   希尔排序
     │    │    └── MergeSort.php   归并排序
     │    │ 
     │    ├── Query 查询篇
