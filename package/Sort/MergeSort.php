@@ -49,6 +49,8 @@ class MergeSort
             $this->mergeArray($arr, $left, $center, $right);
         }
     }
+ // 4, 7, 6, 3, 9, 5, 8
+ //
 
     /**
      * 将两个有序数组合并成一个有序数组
