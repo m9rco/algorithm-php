@@ -24,8 +24,7 @@ class MergeSort
      */
     public function __construct(array $arr)
     {
-        $len = count($arr);//求得数组长度
-        $this->mSort($arr, 0, $len - 1);
+        $this->mSort($arr, 0, count($arr) - 1);
         var_dump($arr);
     }
 
@@ -50,6 +49,8 @@ class MergeSort
             $this->mergeArray($arr, $left, $center, $right);
         }
     }
+ // 4, 7, 6, 3, 9, 5, 8
+ //
 
     /**
      * 将两个有序数组合并成一个有序数组
