@@ -57,4 +57,22 @@ function BinaryQueryRecursive(array $container,$search,$low = 0,$top = 'default'
    }
 }
 
-// var_dump( BinaryQueryRecursive([0,1,2,3,4,5,6,7,8,9],9)  );
+ var_dump( BinaryQueryRecursive([0,1,2,3,4,5,6,7,8,9],9)  );
+/*
+array(7) {
+    [0] =>
+  int(3)
+  [1] =>
+  int(4)
+  [2] =>
+  int(5)
+  [3] =>
+  int(6)
+  [4] =>
+  int(7)
+  [5] =>
+  int(8)
+  [6] =>
+  int(9)
+}
+*/
