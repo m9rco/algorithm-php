@@ -24,8 +24,7 @@ class MergeSort
      */
     public function __construct(array $arr)
     {
-        $len = count($arr);//求得数组长度
-        $this->mSort($arr, 0, $len - 1);
+        $this->mSort($arr, 0, count($arr) - 1);
         var_dump($arr);
     }
 
