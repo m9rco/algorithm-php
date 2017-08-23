@@ -24,9 +24,10 @@
     │    │ 
     │    ├── Query 查询篇
     │    │    ├── BinaryQuery.php 二分查找
-    │    │    └── 快速查找 
+    │    │    └── QulickQuery.php 快速查找 
     │    │     
     │    └── Other 其他 
+    │         ├──  MonkeyKing.php 猴子选大王
     │         └──  BigSmallReplace.php Hello World 输出 Olleh Dlrow
     │     
     ├──LICENSE 
