@@ -6,9 +6,7 @@
  * @author   Pu ShaoWei <marco0727@gamil.com>
  * @date     2017/8/12
  * @license  Mozilla
- */
-
-/**
+ *
  * segmentFault： https://segmentfault.com/q/1010000010627229
  *
  * @language php

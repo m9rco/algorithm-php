@@ -60,13 +60,13 @@ class MergeSort
      */
     public function mergeArray(&$arr, $left, $center, $right)
     {
-        echo '| '.$left.' - '.$center.' - '.$right.' - '.implode(',',$arr).PHP_EOL;
+        echo '| ' . $left . ' - ' . $center . ' - ' . $right . ' - ' . implode(',', $arr) . PHP_EOL;
         //设置两个起始位置标记
-        $a_i = $left;
-        $b_i = $center + 1;
+        $a_i  = $left;
+        $b_i  = $center + 1;
         $temp = [];
 
-        while ($a_i <= $center && $b_i <= $right){
+        while ($a_i <= $center && $b_i <= $right) {
             //当数组A和数组B都没有越界时
             if ($arr[ $a_i ] < $arr[ $b_i ]) {
                 $temp[] = $arr[ $a_i++ ];
@@ -75,16 +75,16 @@ class MergeSort
             }
         }
         //判断 数组A内的元素是否都用完了，没有的话将其全部插入到C数组内：
-        while ($a_i <= $center){
+        while ($a_i <= $center) {
             $temp[] = $arr[ $a_i++ ];
         }
         //判断 数组B内的元素是否都用完了，没有的话将其全部插入到C数组内：
-        while ($b_i <= $right){
+        while ($b_i <= $right) {
             $temp[] = $arr[ $b_i++ ];
         }
 
         //将$arrC内排序好的部分，写入到$arr内：
-        for ($i = 0, $len = count($temp); $i < $len; $i++){
+        for ($i = 0, $len = count($temp); $i < $len; $i++) {
             $arr[ $left + $i ] = $temp[ $i ];
         }
     }
