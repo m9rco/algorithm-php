@@ -58,6 +58,3 @@ function BinaryQueryRecursive(array $container,$search,$low = 0,$top = 'default'
 }
 
 // var_dump( BinaryQueryRecursive([0,1,2,3,4,5,6,7,8,9],9)  );
-/*
- * int(9)
- */
