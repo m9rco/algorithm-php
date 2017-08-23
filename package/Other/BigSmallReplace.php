@@ -7,26 +7,6 @@
  * @date     2017/8/12
  * @license  Mozilla
  */
-//class BigSmallReplace
-//{
-//    public function __construct( $requireStr )
-//    {
-//       $b = str_split($requireStr);
-//       $c = [];
-//       foreach ( $b as &$v ) {
-//           if ( ord($v) > 64 && ord($v) < 91 ) {
-//               $c[] = strtolower($v);
-//           } else if ( ord($v) > 96 && ord($v) < 123 ) {
-//               $c[] = strtoupper($v);
-//           }
-//       }
-//       $d = implode('', $c);
-//       echo $d;
-//    }
-//}
-//// 大写专为小写小写转为大写
-//new BigSmallReplace('aBcDeFgHiJkLmNoPqRsTuVwXyZ');
-
 
 /**
  * segmentFault： https://segmentfault.com/q/1010000010627229
@@ -36,7 +16,7 @@
  * @param    $str
  * @return   string
  */
-function EspecialStrrev( $str )
+function BigSmallReplace( $str )
 {
     // Cutting words
     $first  = preg_split("/[\s]+/", $str);
@@ -58,7 +38,7 @@ function EspecialStrrev( $str )
     return implode(' ',$result);
 }
 
-var_dump(EspecialStrrev('Hello World'));
+var_dump(BigSmallReplace('Hello World'));
 // Olleh Dlrow
 
 
