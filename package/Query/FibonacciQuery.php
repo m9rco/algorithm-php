@@ -26,31 +26,25 @@ class FibonacciQuery{
         $count = count($container);
         $lower = $key = $result = 0;
         $high  = $count - 1;
-
         //计算$count位于斐波那契数列的位置
         while ($count > ($this->produced($key) - 1)) {
             $key++;
         }
-
         //将不满的数值补全，补的数值为数组的最后一位
         for ($j = $count; $j < $this->produced($key) - 1; $j++) {
             $container[ $j ] = $container[ $count - 1 ];
         }
-
         //查找开始
         while ($lower <= $high) {
-
             //计算当前分隔的下标
             $mid = $lower + $this->produced($key - 1) - 1;
-
             if ($num < $container[ $mid ]) {
-                $high   = $mid - 1;
-                $key -= 1;     //斐波那契数列数列下标减一位
+                $high    = $mid - 1;
+                $key    -= 1;    //斐波那契数列数列下标减一位
             }else if ($num > $container[ $mid ]) {
                 $lower   = $mid + 1;
-                $key -= 2;    //斐波那契数列数列下标减两位
+                $key    -= 2;    //斐波那契数列数列下标减两位
             }
-
             if ($mid <= $count - 1) {
                 $result =  $mid;        break;
             } else { //这里$mid大于$count-1说明是补全数值，返回$count-1
@@ -66,7 +60,8 @@ class FibonacciQuery{
      * @param $length
      * @return int
      */
-    public function produced($length){
+    public function produced($length)
+    {
         if($length < 2){
             return ($length == 0 ? 0 : 1);
         }
@@ -74,4 +69,4 @@ class FibonacciQuery{
     }
 }
 
-var_dump(new FibonacciQuery([4, 5, 7, 8, 9, 10, 8], 8));
+new FibonacciQuery([4, 5, 7, 8, 9, 10, 8], 8);
