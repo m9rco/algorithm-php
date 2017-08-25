@@ -1,8 +1,13 @@
 <?php
+
 /**
- * ${NAME}
+ * BinaryTree
  *
- * @author   Pu ShaoWei <pushaowei-hj@huajiao.tv>
+ * @author   Pu ShaoWei <pushaowei0727@gmail.com>
  * @date     2017/8/25
  * @license  Mozilla
+ * -------------------------------------------------------------
+ * 思路分析：
+ * -------------------------------------------------------------
+ *
  */
