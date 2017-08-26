@@ -32,8 +32,10 @@
     │    │     
     │    └── Other 其他 
     │         ├──  MonkeyKing.php       猴子选大王
-    │         ├──  GetCattle.php        牛年求牛
     │         ├──  Fibonacci.php        斐波那契数列
+    │         ├──  StealingApples.php   偷苹果求余
+    │         ├──  HanoiGames.php       汉诺塔游戏
+    │         ├──  GetCattle.php        牛年求牛
     │         └──  BigSmallReplace.php  Hello World 输出 Olleh Dlrow
     │     
     ├──LICENSE 
