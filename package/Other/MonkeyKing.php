@@ -73,3 +73,21 @@ function whoIsKing($n,$m){
 }
 
 var_dump(whoIsKing(10,3));
+
+function king($n, $m){
+    $monkeys = range(1, $n);
+    $i=0;
+    $k=$n;
+    while (count($monkeys)>1) {
+        if(($i+1)%$m==0) {
+            unset($monkeys[$i]);
+        } else {
+            array_push($monkeys,$monkeys[$i]);
+            unset($monkeys[$i]);
+        }
+        $i++;
+    }
+    return current($monkeys);
+}
+$a = king(10, 3);
+var_dump($a);
