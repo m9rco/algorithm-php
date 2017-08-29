@@ -20,14 +20,15 @@ function QulickSort( array $container ){
         return $container;
     }
     $left = $right = [];
-    for ( $i =0; $i<$count-1;$i++ ){
-        if( $container[$i] < $container[0] ){
-            $left[] = $container[$i];
-        }else{
-            $right[]= $container[$i];
+    for ($i = 1; $i < $count; $i++) {
+        if ($container[$i] < $container[0]) {
+            $left[]  = $container[$i];
+        } else {
+            $right[] = $container[$i];
         }
     }
-    $left = QulickSort($left); $right = QulickSort($right);
+    $left  = QulickSort($left);
+    $right = QulickSort($right);
     return array_merge($left,[$container[0]],$right);
 }
 
