@@ -9,8 +9,6 @@
  *
  * segmentFault： https://segmentfault.com/q/1010000010627229
  *
- * @language php
- * @author   Pu Shaowei
  * @param    $str
  * @return   string
  */

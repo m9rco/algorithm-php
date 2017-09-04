@@ -17,20 +17,28 @@
         
     ├──Package
     │    ├── Sort  排序篇
-    │    │    ├── BubbleSort.php  冒泡排序
-    │    │    ├── QuickSort.php   快速排序
-    │    │    ├── ShellSort.php   希尔排序
-    │    │    ├── MergeSort.php   归并排序
-    │    │    ├── InsertSort.php  插入排序
-    │    │    └── SelectSort.php  选择排序
+    │    │    ├── BubbleSort.php          冒泡排序
+    │    │    ├── QuickSort.php           快速排序
+    │    │    ├── ShellSort.php           希尔排序
+    │    │    ├── MergeSort.php           归并排序
+    │    │    ├── InsertSort.php          插入排序
+    │    │    └── SelectSort.php          选择排序
     │    │ 
-    │    ├── Query 查询篇
-    │    │    ├── BinaryQuery.php 二分查找
-    │    │    └── QulickQuery.php 快速查找 
+    │    ├── Query 查找篇
+    │    │    ├── BinaryQuery.php         二分查找
+    │    │    ├── InseertQuery.php        插入查找
+    │    │    ├── FibonacciQuery.php      斐波那契查找
+    │    │    └── QulickQuery.php         快速查找 
     │    │     
     │    └── Other 其他 
-    │         ├──  MonkeyKing.php 猴子选大王
-    │         └──  BigSmallReplace.php Hello World 输出 Olleh Dlrow
+    │         ├──  MonkeyKing.php         猴子选大王
+    │         ├──  DynamicProgramming.php 动态规划
+    │         ├──  Fibonacci.php          斐波那契数列
+    │         ├──  StealingApples.php     偷苹果求余
+    │         ├──  HanoiGames.php         汉诺塔游戏
+    │         ├──  GetCattle.php          牛年求牛
+    │         ├──  OnlyNumbers.php        求唯一数
+    │         └──  BigSmallReplace.php    Hello World 输出 Olleh Dlrow
     │     
     ├──LICENSE 
     └──README.md
@@ -107,6 +115,13 @@ return i;
     这部分空间的大小与输入/输出的数据的个数多少、数值无关。主要包括指令空间（即代码空间）、数据空间（常量、简单变量）等所占的空间。这部分属于静态空间。
 > #### 可变空间，这部分空间的主要包括动态分配的空间，以及递归栈所需的空间等。这部分的空间大小与算法有关。
     一个算法所需的存储空间用f(n)表示。S(n)=O(f(n))　　其中n为问题的规模，S(n)表示空间复杂度。
+
+## 递归和循环的简单比较：
+    1、从程序上看，递归表现为自己调用自己，循环则没有这样的形式。
+    2、递归是从问题的最终目标出发，逐渐将复杂问题化为简单问题，并且简单的问题的解决思路和复杂问题一样，同时存在基准情况，就能最终求得问题，是逆向的。而循环是从简单问题出发，一步步的向前发展，最终求得问题，是正向的。
+    3、任意循环都是可以用递归来表示的，但是想用循环来实现递归（除了单向递归和尾递归），都必须引入栈结构进行压栈出栈。
+    4、一般来说，非递归的效率高于递归。而且递归函数调用是有开销的，递归的次数受堆栈大小的限制。
+
 
 ## 一起进步学习
  1. Fork 我的项目
