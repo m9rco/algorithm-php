@@ -71,7 +71,7 @@ function ColorBricks($inputting)
 echo ColorBricks("AABB");
 
 
-#########################3
+#########################################
 
 
  
