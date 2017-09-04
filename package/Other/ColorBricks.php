@@ -69,3 +69,70 @@ function ColorBricks($inputting)
 }
 
 echo ColorBricks("AABB");
+
+
+#########################################
+
+
+ 
+ function ColorBricks2($str)
+ {
+	$count = strlen($str);
+	$data  = array();
+	for($i = 0; $i < $count; $i++){
+		 $data[] = $str[$i];
+		} 
+	 $a =  pre2($data);
+  }
+ 
+ /*
+  思路分析:
+  
+  *  例如: s = "ABAB",那么小易有六种排列的结果:
+  *  "AABB","ABAB","ABBA","BAAB",    "BBAA"   "BABA",  
+       1-2     0      2-3    0-1       0-3      1-2      
+ 	   "ABAB",   0
+	   "BAAB",   0-1
+ 	   "AABB",   0-2  
+ 	   "BABA"    0-3  
+ 	   "ABBA",   1-2 
+	   "BBAA"    1-3 
+	     
+ */
+ 
+ function pre2($data)
+ { 
+   $c = count($data);
+   $new = array(); 	
+   $max = floor($c/2);  
+   for($i = 0; $i < $max;$i++){
+	   for($j = 1; $j < $c;$j++){
+ 			 $temp = $data[$j];
+			 $data[$j] = $data[0];
+			 $data[0] = $temp;
+			 $new[] = implode("",$data);
+			 echo '0##'.$j.'<br/>';
+		 } 
+	 } 
+	 $nMax = count($new);
+	 $successNumber = 0;
+	 for($i = 0 ; $i < $max;$i++){
+		   $success = false;
+		   for($j = 0; $j < $nMax;$j++){
+			     $str = $new[$j]; 
+				 if($str[$i] == $str[0]){
+					    $success = true;       
+				    }
+			   } 
+	      if($success)$successNumber++;		   
+		 }
+  	   echo '<pre>'; 
+	   echo "小易可以有{$successNumber}种方式";
+	   echo "<br/><br/><br/><br/>";
+	   print_r($new);
+	   exit; 
+ }  
+ $str =  "ABAB";
+ ColorBricks2($str);
+
+
