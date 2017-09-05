@@ -1,4 +1,4 @@
-用 PHP 的方式实现的各类算法合集
+<h1 align="center">用 PHP 的方式实现的各类算法合集</h1>
 ===============
 
 [![Github file size](https://img.shields.io/github/size/webcaetano/craft/build/craft.min.js.svg)](https://github.com/PuShaoWei/arithmetic-php)
@@ -7,6 +7,7 @@
 [![Travis](https://img.shields.io/travis/rust-lang/rust.svg)](https://github.com/PuShaoWei/arithmetic-php)
 [![Codacy grade](https://img.shields.io/codacy/grade/e27821fb6289410b8f58338c7e0bc686.svg)](https://github.com/PuShaoWei/arithmetic-php)
 [![AUR](https://img.shields.io/aur/license/yaourt.svg)]()
+
 
 ## About
 
@@ -36,6 +37,7 @@
     │         ├──  Fibonacci.php          斐波那契数列
     │         ├──  StealingApples.php     偷苹果求余
     │         ├──  HanoiGames.php         汉诺塔游戏
+    │         ├──  ColorBricks.php        彩色砖块
     │         ├──  GetCattle.php          牛年求牛
     │         ├──  OnlyNumbers.php        求唯一数
     │         └──  BigSmallReplace.php    Hello World 输出 Olleh Dlrow
@@ -124,11 +126,19 @@ return i;
 
 
 ## 一起进步学习
- 1. Fork 我的项目
- 2. Pull Request
+ 1. Fork 我的项目并提交你的 `idea`
+ 2. Pull Request 
  3. Merge 
 
-## 纠错
+## 纠错 
 
 如果大家发现有什么不对的地方，可以发起一个[issue](https://github.com/PuShaoWei/arithmetic-php/issues)或者[pull request](https://github.com/PuShaoWei/arithmetic-php/pulls),我会及时纠正
 > 补充:发起pull request的commit message请参考文章[Commit message 和 Change log 编写指南](http://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html)
+
+## 致谢
+感谢以下朋友的issue或pull request：
+
+- [hailwood ](https://github.com/hailwood)
+- [zhangxuanru](https://github.com/zhangxuanru)
+- [ifreesec](https://github.com/ifreesec)
+- [openset](https://github.com/openset)
