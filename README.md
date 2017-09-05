@@ -1,18 +1,33 @@
-<h1 align="center">用 PHP 的方式实现的各类算法合集</h1>
-===============
+<h1 align="center">用 PHP 的方式实现的各类算法合集 :sparkles:</h1>
 
-[![Github file size](https://img.shields.io/github/size/webcaetano/craft/build/craft.min.js.svg)](https://github.com/PuShaoWei/arithmetic-php)
-[![](https://img.shields.io/github/issues-pr-raw/cdnjs/cdnjs.svg)](https://github.com/PuShaoWei/arithmetic-php)
-[![PyPI](https://img.shields.io/pypi/status/Django.svg)](https://github.com/PuShaoWei/arithmetic-php)
-[![Travis](https://img.shields.io/travis/rust-lang/rust.svg)](https://github.com/PuShaoWei/arithmetic-php)
-[![Codacy grade](https://img.shields.io/codacy/grade/e27821fb6289410b8f58338c7e0bc686.svg)](https://github.com/PuShaoWei/arithmetic-php)
-[![AUR](https://img.shields.io/aur/license/yaourt.svg)]()
+<p align="center">
+<a href="https://github.com/PuShaoWei/arithmetic-php#简易结构">
+  <img src="https://img.shields.io/badge/php-done-brightgreen.svg" alt="php">
+</a>
+<a href="https://github.com/PuShaoWei/arithmetic-php">
+    <img src="https://img.shields.io/github/size/webcaetano/craft/build/craft.min.js.svg" alt="Github file size">
+</a>
+<a href="https://github.com/PuShaoWei/arithmetic-php">
+    <img src="https://img.shields.io/github/issues-pr-raw/arithmetic-php/cdnjs.svg">
+</a>
+<a href="https://github.com/PuShaoWei/arithmetic-php">
+    <img src="https://img.shields.io/codacy/grade/e27821fb6289410b8f58338c7e0bc686.svg">
+</a>
+<a href="https://github.com/PuShaoWei/arithmetic-php">
+    <img src="https://img.shields.io/travis/rust-lang/rust.svg">
+</a>
+<a href="https://github.com/PuShaoWei/arithmetic-php">
+    <img src="https://img.shields.io/github/license/mashape/apistatus.svg">
+</a>
+<a href="https://github.com/PuShaoWei/arithmetic-php">
+    <img src="https://img.shields.io/bithound/dependencies/github/rexxars/sse-channel.svg?style=plastic">
+</a>
+</p>
 
 
 ## About
 
 >  如果说各种编程语言是程序员的招式,那么数据结构和算法就相当于程序员的内功。
-
 
 ## 简易结构
         
