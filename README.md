@@ -1,11 +1,8 @@
-<h1 align="center">用 PHP 的方式实现的各类算法合集 :sparkles:</h1>
+<h1 align="center">:whale: 用 PHP 的方式实现的各类算法合集 :whale: </h1>
 
 <p align="center">
 <a href="https://github.com/PuShaoWei/arithmetic-php#简易结构">
   <img src="https://img.shields.io/badge/php-done-brightgreen.svg" alt="php">
-</a>
-<a href="https://github.com/PuShaoWei/arithmetic-php">
-    <img src="https://img.shields.io/github/size/webcaetano/craft/build/craft.min.js.svg" alt="Github file size">
 </a>
 <a href="https://github.com/PuShaoWei/arithmetic-php">
     <img src="https://img.shields.io/github/issues-pr-raw/arithmetic-php/cdnjs.svg">
@@ -18,9 +15,6 @@
 </a>
 <a href="https://github.com/PuShaoWei/arithmetic-php">
     <img src="https://img.shields.io/github/license/mashape/apistatus.svg">
-</a>
-<a href="https://github.com/PuShaoWei/arithmetic-php">
-    <img src="https://img.shields.io/bithound/dependencies/github/rexxars/sse-channel.svg?style=plastic">
 </a>
 </p>
 
