@@ -15,21 +15,22 @@
  * @param  array $container
  * @return array
  */
-function BubbleSort( array $container ) {
+function BubbleSort(array $container)
+{
     $count = count($container);
-    for ( $j = 1; $j < $count; $j++ ) {
-        for ( $i = 0; $i < $count - $j; $i++ ) {
-            if ( $container[$i] > $container[$i + 1] ) {
+    for ($j = 1; $j < $count; $j++) {
+        for ($i = 0; $i < $count - $j; $i++) {
+            if ($container[$i] > $container[$i + 1]) {
                 $temp = $container[$i];
-                $container[$i] = $container[$i+1];
-                $container[$i+1] = $temp;
+                $container[$i] = $container[$i + 1];
+                $container[$i + 1] = $temp;
             }
         }
     }
     return $container;
 }
 
-var_dump( BubbleSort([4,21,41,2,53,1,213,31,21,423]) );
+var_dump(BubbleSort([4, 21, 41, 2, 53, 1, 213, 31, 21, 423]));
 
 /*
 array(10) {
@@ -54,4 +55,39 @@ array(10) {
   [9] =>
   int(423)
 }
+ */
+
+// +----------------------------------------------------------------------
+// |                        方法二
+// +----------------------------------------------------------------------
+function BubbleSortV2(array $container)
+{
+    $len = count($container);
+    // 也可以用foreach
+    for ($i = 0; $i < $len; $i++) {
+        for ($j = $i + 1; $j < $len; $j++) {
+            if ($container[$i] > $container[$j]) {
+                list($container[$i], $container[$j]) = array($container[$j], $container[$i]);
+            }
+        }
+    }
+
+    return $container;
+}
+
+print_r(BubbleSort([4, 21, 41, 2, 53, 1, 213, 31, 21, 423]));
+/*
+Array
+(
+    [0] => 1
+    [1] => 2
+    [2] => 4
+    [3] => 21
+    [4] => 21
+    [5] => 31
+    [6] => 41
+    [7] => 53
+    [8] => 213
+    [9] => 423
+)
  */
