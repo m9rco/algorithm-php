@@ -58,8 +58,8 @@ while (true) {
 for ($r = 1, $n = 5; ; $r++) {
     $t = $r;
     for ($i = 0; $i <= $n; $i++) {
-        if ($t % 5 == 1) {
-            $t = $t - round($t / 5) - 1;
+        if ($t % $n == 1) {
+            $t = $t - round($t / $n) - 1;
         } else {
             continue 2;
         }

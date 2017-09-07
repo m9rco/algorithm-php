@@ -14,14 +14,15 @@
  * @param array $container
  * @return mixed
  */
-function OnlyNumbers(array $container){
+function OnlyNumbers(array $container)
+{
     $count = count($container);
-    if( $count <= 1 ) {
+    if ($count <= 1) {
         return $container;
     }
     $exist = [];
     for ($i = 0; $i < $count; $i++) {
-        if(isset($exist[$container[$i]])){
+        if (isset($exist[$container[$i]])) {
             unset($exist[$container[$i]]);
             continue;
         }
@@ -29,4 +30,26 @@ function OnlyNumbers(array $container){
     }
     return !empty($exist) ? array_keys($exist)[0] : false;
 }
-var_dump(OnlyNumbers([11,22,22,11,5,63,13,5,63,18,89,13,89]));
+
+var_dump(OnlyNumbers([11, 22, 22, 11, 5, 63, 13, 5, 63, 18, 89, 13, 89]));
+
+
+// +----------------------------------------------------------------------
+// |                        方法二
+// +----------------------------------------------------------------------
+/**
+ * @author      Openset <openset.wang@gmail.com>
+ * @link        https://github.com/openset
+ * @date        2017/9/7
+ * @param array $container
+ * @return null
+ */
+function OnlyNumbersV2(array $container)
+{
+
+    $res = array_flip(array_count_values($container));
+
+    return isset($res[1]) ? $res[1] : null;
+}
+
+var_dump(OnlyNumbersV2([11, 22, 22, 11, 5, 63, 13, 5, 63, 18, 89, 13, 89]));
