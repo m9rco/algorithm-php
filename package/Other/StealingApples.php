@@ -49,9 +49,11 @@ while (true) {
 // |                        方法二
 // +----------------------------------------------------------------------
 /**
- * @author    Openset <openset.wang@gamil.com>
+ * @author    Openset <openset.wang@gmail.com>
+ * @link      https://github.com/openset
  * @date      2017/9/7
  * @param int $n N个人
+ * @param int $r 共有多少苹果
  */
 for ($r = 1, $n = 5; ; $r++) {
     $t = $r;
