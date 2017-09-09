@@ -77,11 +77,13 @@ In this case, you know how fast these algorithms are
 
 - The running time of the algorithm increases at different speeds
   - For example, the difference between a simple find and a binary search
-    element|Easy to find|Binary search
-    ---|---|---
-    100|100ms|7ms
-    10000|10s|14ms
-    1 000 000 000 |11day|30ms
+  
+element|Easy to find|Binary search
+---|---|---
+100|100ms|7ms
+10000|10s|14ms
+1 000 000 000 |11day|30ms
+    
   - ` O ` said hair is pointed out that how fast algorithms, such as list contains ` n ` element, a simple search need to check each element, so you need to perform ` n ` time operations
     Using large ` O ` said ` O (n) to make this operation `, binary search need to perform log<sub>n</sub> using large ` O ` said to`O(log n)`
 - Some common big O runtime
