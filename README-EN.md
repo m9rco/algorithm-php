@@ -1,4 +1,4 @@
-<h1 align="center">:whale: 用 PHP 的方式实现的各类算法合集 :whale: </h1>
+<h1 align="center">:whale:A collection of algorithms that are implemented in PHP:whale: </h1>
 
 <p align="center">
 <a href="https://github.com/PuShaoWei/arithmetic-php#简易结构">
@@ -6,7 +6,7 @@
 </a>
 <a href="https://github.com/PuShaoWei/arithmetic-php">
     <img src="https://img.shields.io/github/issues-pr-raw/arithmetic-php/cdnjs.svg">
-</a>1
+</a>
 <a href="https://github.com/PuShaoWei/arithmetic-php">
     <img src="https://img.shields.io/codacy/grade/e27821fb6289410b8f58338c7e0bc686.svg">
 </a>
@@ -20,7 +20,7 @@
 <p align="center"> <a href="./README.md">中文版</a>　<p>
 
 
-## 简易结构
+## Simple structure,
         
     ├──Package
     │    ├── Sort  
