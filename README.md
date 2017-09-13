@@ -43,6 +43,7 @@
     │         ├──  Fibonacci.php          斐波那契数列
     │         ├──  StealingApples.php     偷苹果求余
     │         ├──  HanoiGames.php         汉诺塔游戏
+    │         ├──  BidirectionalQueue.php 双向队列
     │         ├──  ColorBricks.php        彩色砖块
     │         ├──  GetCattle.php          牛年求牛
     │         ├──  OnlyNumbers.php        求唯一数

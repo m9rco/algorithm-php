@@ -42,7 +42,8 @@
     │         ├──  DynamicProgramming.php 
     │         ├──  Fibonacci.php          
     │         ├──  StealingApples.php     
-    │         ├──  HanoiGames.php         
+    │         ├──  HanoiGames.php       
+    │         ├──  BidirectionalQueue.php     
     │         ├──  ColorBricks.php        
     │         ├──  GetCattle.php          
     │         ├──  OnlyNumbers.php        
