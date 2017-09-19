@@ -41,6 +41,7 @@ class PokerGames
     protected $tally;
     protected $i    ;
     protected $count;
+    protected $clear;
     protected $container = array ();
     protected $poker     = array ();
 
@@ -52,6 +53,7 @@ class PokerGames
         $this->container = $this->makePoker();
         $this->count     = count($this->container);
         $this->i         = $this->tally = round(100 / $this->count,2);
+        $this->clear     = in_array(PHP_OS,array ('Darwin','Linux'));
         $this->taskJob($this->generator($this->count, $this->count));
     }
 
@@ -62,11 +64,12 @@ class PokerGames
      */
     public function taskJob(Generator $task)
     {
-        foreach ($task as $value) {
+        foreach ($task as $value) {                                     // 1. 这是无脑递归
             if (isset($this->container[$value])) {
                 array_push($this->poker, $this->container[$value]);
                 unset($this->container[$value]);
-                echo "正在洗牌中.. {$this->tally}% \n";
+                $this->clear && system("clear");
+                echo "正在洗牌中.. ".intval($this->tally)."% \n";
                 $this->tally += $this->i;
             } else {
                 $this->taskJob($this->generator($this->count));
@@ -79,7 +82,7 @@ class PokerGames
      */
     public function __destruct()
     {
-        curl_close($this->resources);
+        curl_close($this->resources); // 2. 关闭资源在这个时候关闭是否合适 有待考究
         var_dump($this->poker);
     }
 
@@ -158,5 +161,4 @@ class PokerGames
         return 0;
     }
 }
-
 new PokerGames();
