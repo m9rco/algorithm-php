@@ -6,3 +6,18 @@ php:
   - 7.0
   - 7.1
 
+services:
+  - mysql
+
+before_install:
+  - mysql -e 'SET @@GLOBAL.wait_timeout=3'
+  - mysql -e 'SET @@GLOBAL.interactive_timeout=3'
+  - mysql -e 'CREATE DATABASE IF NOT EXISTS ci;'
+  - mysql -e 'use ci;'
+  - mysql -e 'CREATE TABLE `ci`.`hello` (`id` int(11) NOT NULL AUTO_INCREMENT,`content` varchar(255) NOT NULL,`user` varchar(255) NOT NULL,`created` datetime NOT NULL,PRIMARY KEY (`id`)) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;'
+
+script: vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover
+
+after_script:
+  - wget https://scrutinizer-ci.com/ocular.phar
+  - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
