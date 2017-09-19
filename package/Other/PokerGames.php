@@ -55,19 +55,16 @@ class PokerGames
         $this->i         = $this->tally = round(100 / $count, 2);
         $this->clear     = in_array(PHP_OS, array ('Darwin', 'Linux'));
         $this->taskJob($this->generator($count, round($count / 2)));
-        if (array_diff_assoc($this->container, $this->poker)) {
-            $this->taskJob($this->generator(max(array_keys($this->container)), round($count / 2)));
-        }
     }
 
     /**
-     * 弄着玩，不推进实际生产里玩
+     * 弄着玩，不推进实际生产里玩 | 无脑方法2
      *
      * @param \Generator $task
      */
     public function taskJob(Generator $task)
     {
-        foreach ($task as $value) {                                     // 1. 这里无脑搞
+        foreach ($task as $value) {
             if (empty($value)) {
                 break;
             }
@@ -89,6 +86,8 @@ class PokerGames
      */
     public function __destruct()
     {
+        curl_close($this->resources); // 2. 关闭资源在这个时候关闭是否合适 有待考究
+        $this->poker = array_merge($this->poker, array_diff_assoc($this->container, $this->poker));
         var_dump($this->poker);
     }
 
@@ -161,7 +160,6 @@ class PokerGames
         $result          = curl_exec($ch);
         $code            = curl_getinfo($ch)['http_code'];
         $this->resources = $ch;
-        curl_close($this->resources); // 2. 关闭资源在这个时候关闭是否合适 有待考究
         if ($code == 200) {
             return explode(PHP_EOL, $result);
         }
