@@ -39,7 +39,7 @@ class PokerGames
 
     protected $resources;
     protected $tally;
-    protected $i    ;
+    protected $i;
     protected $count;
     protected $clear;
     protected $container = array ();
@@ -51,10 +51,13 @@ class PokerGames
     public function __construct()
     {
         $this->container = $this->makePoker();
-        $this->count     = count($this->container);
-        $this->i         = $this->tally = round(100 / $this->count,2);
-        $this->clear     = in_array(PHP_OS,array ('Darwin','Linux'));
-        $this->taskJob($this->generator($this->count, $this->count));
+        $count           = count($this->container);
+        $this->i         = $this->tally = round(100 / $count, 2);
+        $this->clear     = in_array(PHP_OS, array ('Darwin', 'Linux'));
+        $this->taskJob($this->generator($count, round($count / 2)));
+        if (array_diff_assoc($this->container, $this->poker)) {
+            $this->taskJob($this->generator(max(array_keys($this->container)), round($count / 2)));
+        }
     }
 
     /**
@@ -64,15 +67,19 @@ class PokerGames
      */
     public function taskJob(Generator $task)
     {
-        foreach ($task as $value) {                                     // 1. 这是无脑递归
-            if (isset($this->container[$value])) {
-                array_push($this->poker, $this->container[$value]);
-                unset($this->container[$value]);
-                $this->clear && system("clear");
-                echo "正在洗牌中.. ".intval($this->tally)."% \n";
-                $this->tally += $this->i;
-            } else {
-                $this->taskJob($this->generator($this->count));
+        foreach ($task as $value) {                                     // 1. 这里无脑搞
+            if (empty($value)) {
+                break;
+            }
+            foreach ($value as $_value) {
+                if (isset($this->container[$_value])) {
+                    array_push($this->poker, $this->container[$_value]);
+                    unset($this->container[$_value]);
+                    $this->clear && system("clear");
+                    echo "正在洗牌中.. " . intval($this->tally) . "% \n";
+                    $this->tally += $this->i;
+                }
+                continue;
             }
         }
     }
@@ -82,7 +89,6 @@ class PokerGames
      */
     public function __destruct()
     {
-        curl_close($this->resources); // 2. 关闭资源在这个时候关闭是否合适 有待考究
         var_dump($this->poker);
     }
 
@@ -93,7 +99,7 @@ class PokerGames
      * @param     $max
      * @return \Generator
      */
-    public function generator($max,$limit = 1)
+    public function generator($max, $limit = 1)
     {
         while ($limit--) {
             yield $this->makeRand($max);
@@ -138,13 +144,13 @@ class PokerGames
      * 去大气噪音那里拿随机数
      *
      * @param $max
-     * @return int
+     * @return mixed
      */
     public function makeRand($max)
     {
         $ch = curl_init();
         curl_setopt_array($ch, [
-            CURLOPT_URL            => sprintf(self::RANDOM, 1, $max),
+            CURLOPT_URL            => sprintf(self::RANDOM, $max, $max),
             CURLOPT_SSL_VERIFYPEER => false,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_HTTPHEADER     => array ('Expect:'),
@@ -155,10 +161,12 @@ class PokerGames
         $result          = curl_exec($ch);
         $code            = curl_getinfo($ch)['http_code'];
         $this->resources = $ch;
+        curl_close($this->resources); // 2. 关闭资源在这个时候关闭是否合适 有待考究
         if ($code == 200) {
-            return (int)$result;
+            return explode(PHP_EOL, $result);
         }
-        return 0;
+        return false;
     }
 }
+
 new PokerGames();
