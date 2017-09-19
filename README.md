@@ -21,7 +21,7 @@
 
 
 ## 简易结构
-        
+
     ├──Package
     │    ├── Sort  排序篇
     │    │    ├── BubbleSort.php          冒泡排序
@@ -30,14 +30,14 @@
     │    │    ├── MergeSort.php           归并排序
     │    │    ├── InsertSort.php          插入排序
     │    │    └── SelectSort.php          选择排序
-    │    │ 
+    │    │
     │    ├── Query 查找篇
     │    │    ├── BinaryQuery.php         二分查找
     │    │    ├── InseertQuery.php        插入查找
     │    │    ├── FibonacciQuery.php      斐波那契查找
-    │    │    └── QulickQuery.php         快速查找 
+    │    │    └── QulickQuery.php         快速查找
     │    │     
-    │    └── Other 其他 
+    │    └── Other 其他
     │         ├──  MonkeyKing.php         猴子选大王
     │         ├──  DynamicProgramming.php 动态规划
     │         ├──  Fibonacci.php          斐波那契数列
@@ -47,9 +47,10 @@
     │         ├──  ColorBricks.php        彩色砖块
     │         ├──  GetCattle.php          牛年求牛
     │         ├──  OnlyNumbers.php        求唯一数
+    │         ├──  PokerGames.php         洗扑克牌
     │         └──  BigSmallReplace.php    Hello World 输出 Olleh Dlrow
     │     
-    ├──LICENSE 
+    ├──LICENSE
     └──README.md
 
 ## 要做什么？
@@ -78,13 +79,13 @@ left|right
 
 - 算法的运行时间以不同的速度增加
   - 例如简单查找与二分查找的区别
-  
+
 元素|简单查找|二分查找
 ---|---|---
 100个元素|100ms|7ms
 10000个元素|10s|14ms
 1 000 000 000 个元素|11天|30ms
-    
+
   - 大`O`表示发指出了算法有多快，例如列表包含`n`个元素，简单查找需要检查每个元素，因此需要执行`n`次操作
     使用大`O`表示发这个运行时间为`O(n)`,二分查找需要执行log<sub>n</sub>次操作，使用大`O`表示为`O(log n)`
 - 一些常见的大O运行时间
@@ -109,10 +110,10 @@ left|right
 
 ## 一起进步学习
 1. Fork 我的项目并提交你的 `idea`
-2. Pull Request 
-3. Merge 
+2. Pull Request
+3. Merge
 
-## 纠错 
+## 纠错
 
 如果大家发现有什么不对的地方，可以发起一个[issue](https://github.com/PuShaoWei/arithmetic-php/issues)或者[pull request](https://github.com/PuShaoWei/arithmetic-php/pulls),我会及时纠正
 > 补充:发起pull request的commit message请参考文章[Commit message 和 Change log 编写指南](http://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html)
@@ -126,4 +127,4 @@ left|right
 - [openset](https://github.com/openset)
 
 ## License
-MIT 
+MIT
