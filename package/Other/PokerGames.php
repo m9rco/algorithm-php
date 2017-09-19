@@ -66,7 +66,7 @@ class PokerGames
             if (isset($this->container[$value])) {
                 array_push($this->poker, $this->container[$value]);
                 unset($this->container[$value]);
-                echo "{$this->tally}%  正在洗牌中..\n";
+                echo "正在洗牌中.. {$this->tally}% \n";
                 $this->tally += $this->i;
             } else {
                 $this->taskJob($this->generator($this->count));
