@@ -200,13 +200,18 @@ class Scheduler
     protected $taskMap   = []; // taskId => task
     protected $taskQueue;
 
-    public function __construct(SplQueue $spl)
+    public function __construct()
     {
-        // SplQueue
         // http://php.net/manual/zh/class.splqueue.php
-        $this->taskQueue = $spl;
+        $this->taskQueue = new SplQueue();
     }
 
+    /**
+     * 创建一个task 开启一个协程
+     *
+     * @param \Generator $coroutine
+     * @return int
+     */
     public function newTask(Generator $coroutine)
     {
         $tid  = ++$this->maxTaskId;
@@ -217,30 +222,37 @@ class Scheduler
         return $tid;
     }
 
+    /**
+     * 队列入队
+     *
+     * @param \Task $task
+     */
     public function schedule(Task $task)
     {
         $this->taskQueue->enqueue($task);
     }
 
+    /**
+     * 消费队列内容
+     */
     public function run()
     {
         GLOBAL $i;
         while (!$this->taskQueue->isEmpty()) {
+            // 出队列
             $task   = $this->taskQueue->dequeue();
-            $retval = $task->run();
+            $retval = $task->run(); // 跑Task 中的 run
 
             echo "Scheduler runtime:" . ++$i . "  retval is:\n";
-            var_dump($retval);
-
             if ($retval instanceof SystemCall) {
-                $retval($task, $this);
+                $retval($task, $this);  // 如果为函数调用则这样跑起来
                 continue;
             }
 
-            if ($task->isFinished()) {
+            if ($task->isFinished()) {  // 结束了就删掉
                 unset($this->taskMap[$task->getTaskId()]);
             } else {
-                $this->schedule($task);
+                $this->schedule($task); // 那就回炉重造
             }
         }
     }
@@ -250,11 +262,18 @@ class SystemCall
 {
     protected $callback;
 
-    public function __construct($callback)
+    public function __construct(callable $callback)
     {
         $this->callback = $callback;
     }
 
+    /**
+     * 以函数方式调用
+     *
+     * @param \Task      $task
+     * @param \Scheduler $scheduler
+     * @return mixed
+     */
     public function __invoke(Task $task, Scheduler $scheduler)
     {
         $callback = $this->callback;
@@ -284,18 +303,19 @@ function task($max)
     }
 }
 
-$scheduler = new Scheduler(new SplQueue());
-$scheduler->newTask(task(10));
-$scheduler->newTask(task(5));
-function testYield()
-{
-    yield getTaskId();
-}
+$scheduler = new Scheduler();
+$scheduler->newTask(task(3));
+$scheduler->newTask(task(3));
+
+//function testYield()
+//{
+//    yield getTaskId();
+//}
 
 //var_dump(testYield()->current());
 $scheduler->run();
 
-
+/*
 function task1() {
     for ($i = 1; $i <= 10; ++$i) {
         echo "This is task 1 iteration $i.\n";
@@ -309,5 +329,118 @@ function task2() {
         yield;
     }
 }
-$scheduler->newTask(task1());
-$scheduler->newTask(task2());
+$scheduler->newTask(task1(21));
+$scheduler->newTask(task2(21));
+$scheduler->run();
+*/
+
+// 最后回顾一下知识点,协程不一定能提高速度，但它一定能节约到内存
+/**
+ * 协程创建
+ *
+ * @param     $start
+ * @param     $limit
+ * @param int $step
+ * @return \Generator
+ */
+function xrange($start, $limit, $step = 1)
+{
+    for ($i = $start; $i <= $limit; $i += $step) {
+        yield $i;
+    }
+}
+
+$max = 999999;
+$c   = new codeStatus(true);
+$c->timeStart();
+
+$simpleStart = microtime(true);
+foreach (range(1, $max, 2) as $number) {
+}
+$simpleEnd = microtime(true);
+$c->timeEnd();
+print_r($c->showStatus());
+
+$c = new codeStatus(true);
+$c->timeStart();
+$start = microtime(true);
+foreach (xrange(1, $max, 2) as $number) {
+}
+
+$end = microtime(true);
+$c->timeEnd();
+print_r($c->showStatus());
+
+
+/**
+ * 程序耗时统计
+ *
+ * @version  1.0
+ */
+class codeStatus
+{
+    /**
+     * @param:boolen $time_type时间类型, boolen$show_m是否显示内存,
+     * boolen$show_type,false是array,ture为json,$regmax是数据保留几位
+     */
+    public         $regmax;
+    public         $runTime = 0;
+    public         $time_type;
+    public         $is_show_memory;
+    public         $show_type;
+    private static $t1;
+    private static $t2;
+
+    public function __construct($time_type = false, $show_m = true, $show_type = false, $regmax = 3)
+    {
+        $this->regmax         = $regmax;
+        $this->is_show_memory = $show_m;
+        $this->time_type      = $time_type;
+        $this->show_type      = $show_type;
+    }
+
+    public function timeStart()
+    {
+        self::$t1 = microtime(true);
+    }
+
+    public function timeEnd()
+    {
+        self::$t2 = microtime(true);
+    }
+
+    private function getTime()
+    {
+        if (self::$t1 != '' && self::$t2 != '') {
+            if ($this->time_type == false) {
+                return '耗时' . round(self::$t2 - self::$t1, $this->regmax) . '秒';
+            } else if ($this->time_type == true) {
+                return '耗时' . round(self::$t2 - self::$t1, ($this->regmax + 3)) * 1000 . '毫秒';
+            }
+        } else {
+            return "error param";
+        }
+    }
+
+    private function getmemory()
+    {
+        $memory = (!function_exists('memory_get_usage')) ? '0' : round(memory_get_usage() / 1024, $this->regmax) . 'KB';
+        return '占用内存：' . $memory;
+    }
+
+    public function showStatus()
+    {
+        if ($this->is_show_memory == true) {
+            $arr = array (self::getTime(), self::getmemory());
+        } else {
+            $arr = array (self::getTime());
+        }
+        if ($this->show_type == false) {
+            return $arr;
+        } else {
+            return json_encode($arr);
+        }
+    }
+
+
+}
