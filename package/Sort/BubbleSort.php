@@ -64,7 +64,7 @@ function BubbleSortV2(array $container)
 {
     $len = count($container);
     // 也可以用foreach
-    for ($i = 0; $i < $len; $i++) {
+    for ($i = 0; $i < $len - 1; $i++) {
         for ($j = $i + 1; $j < $len; $j++) {
             if ($container[$i] > $container[$j]) {
                 list($container[$i], $container[$j]) = array($container[$j], $container[$i]);
