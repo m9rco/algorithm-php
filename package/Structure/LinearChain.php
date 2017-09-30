@@ -110,12 +110,15 @@ class LinearChain
     protected function getHeadCreateChain(array $arr)
     {
         $this->clearChain();
-        foreach ($arr as $value) {
+        $iterator = $this->generator($arr);
+        $iterator->rewind();
+        while ($iterator->valid()) {
             $node       = new stdClass();
-            $node->elem = $value;
+            $node->elem = $iterator->current();
             $node->next = $this->next;
             $this->next = $node;
             $this->length++;
+            $iterator->next();
         }
         return $this->next;
     }
@@ -129,13 +132,16 @@ class LinearChain
     protected function getTailCreateChain(array $arr)
     {
         $this->clearChain();
-        $q = $this;
-        foreach ($arr as $value) {
+        $self     = $this;
+        $iterator = $this->generator($arr);
+        $iterator->rewind();
+        while ($iterator->valid()) {
             $node       = new stdClass();
-            $node->elem = $value;
-            $node->next = $q->next;
-            $q->next    = $node;
-            $q          = $node;
+            $node->elem = $iterator->current();
+            $node->next = $self->next;
+            $self->next = $node;
+            $self       = $node;
+            $iterator->next();
             $this->length++;
         }
         return $this->next;
@@ -153,14 +159,14 @@ class LinearChain
         if ($i > $this->length || $i < 1) {
             return null;
         }
-        $j = 1;
-        $p = $this->next;
-        while ($j < $i) {
-            $q = $p->next;
-            $p = $q;
-            $j++;
+        $mark = 1;
+        $self = $this->next;
+        while ($mark < $i) {
+            $box  = $self->next;
+            $self = $box;
+            $mark++;
         }
-        return $p;
+        return $self;
     }
 
     /**
@@ -172,12 +178,12 @@ class LinearChain
      */
     protected function getElemIsExist($value)
     {
-        $p = $this;
-        while ($p->next != null && strcmp($p->elem, $value) !== 0) {
-            $p = $p->next;
+        $self = $this;
+        while ($self->next != null && strcmp($self->elem, $value) !== 0) {
+            $self = $self->next;
         }
-        if (strcmp($p->elem, $value) === 0) {
-            return $p;
+        if (strcmp($self->elem, $value) === 0) {
+            return $self;
         }
         return null;
     }
@@ -191,14 +197,14 @@ class LinearChain
      */
     protected function getElemPosition($value)
     {
-        $p = $this;
-        $j = 0;
-        while ($p->next != null && strcmp($p->elem, $value) !== 0) {
-            $p = $p->next;
-            $j++;
+        $self = $this;
+        $mark = 0;
+        while ($self->next != null && strcmp($self->elem, $value) !== 0) {
+            $self = $self->next;
+            $mark++;
         }
-        if (strcmp($p->elem, $value) === 0) {
-            return $j;
+        if (strcmp($self->elem, $value) === 0) {
+            return $mark;
         }
         return -1;
     }
@@ -206,25 +212,25 @@ class LinearChain
     /**
      * 单链表的插入操作
      *
-     * @param int   $i 插入元素的位序，即在什么位置插入新的元素,从1开始
-     * @param mixed $e 插入的新的元素值
+     * @param int   $key   插入元素的位序，即在什么位置插入新的元素,从1开始
+     * @param mixed $value 插入的新的元素值
      * @return boolean 插入成功返回true，失败返回false
      */
-    protected function getInsertElem($i, $e)
+    protected function getInsertElem($key, $value)
     {
-        if ($i > $this->length || $i < 1) {
+        if ($key > $this->length || $key < 1) {
             return false;
         }
-        $j = 1;
-        $p = $this;
-        while ($p->next != null && $j < $i) {
-            $p = $p->next;
-            $j++;
+        $mark = 1;
+        $self = $this;
+        while ($self->next != null && $mark < $key) {
+            $self = $self->next;
+            $mark++;
         }
-        $q       = new stdClass();
-        $q->elem = $e;
-        $q->next = $p->next;
-        $p->next = $q;
+        $node       = new stdClass();
+        $node->elem = $value;
+        $node->next = $self->next;
+        $self->next = $node;
         $this->length++;
         return true;
     }
@@ -240,41 +246,41 @@ class LinearChain
         if ($this->getIsEmpty()) {
             return $result;
         }
-        $p = $this->next;
-        while ($p->next != null) {
-            $result[] = $p->elem;
-            $p        = $p->next;
+        $self = $this->next;
+        while ($self->next != null) {
+            array_push($result, $self->elem);
+            $self = $self->next;
         }
-        $result[] = $p->elem;
+        array_push($result, $self->elem);
         return $result;
     }
 
     /**
-     * 删除单链中第$i个元素
+     * 根据Key 删除单链中的元素
      *
-     * @param int $i 元素位序
+     * @param int $key 元素位序
      * @return boolean 删除成功返回true,失败返回false
      */
-    protected function getDeleteElem($i)
+    protected function getDeleteElem($key)
     {
-        $i = (int)$i;
-        if ($i > $this->length || $i < 1) {
+        $key = (int)$key;
+        if ($key > $this->length || $key < 1) {
             return false;
         }
-        $p = $this;
-        $j = 1;
-        while ($j < $i) {
-            $p = $p->next;
-            $j++;
+        $self = $this;
+        $mark = 1;
+        while ($mark < $key) {
+            $self = $self->next;
+            $mark++;
         }
-        $q       = $p->next;
-        $p->next = $q->next;
+        $node       = $self->next;
+        $self->next = $node->next;
         $this->length--;
         return true;
     }
 
     /**
-     * 删除单链表中值为$value的前$i($i>=1)个结点
+     * 删除单链表中值为$value的前 $i($i>=1) 个结点
      *
      * @param mixed mixed 待查找的值
      * @param $i    mixed 删除的次数，即删除查找到的前$i个
@@ -297,31 +303,43 @@ class LinearChain
      */
     protected function getElemUnique()
     {
-        if (!$this->getIsEmpty()) {
-            $p = $this;
-            while ($p->next != null) {
-                $q   = $p->next;
-                $ptr = $p;
-                while ($q->next != null) {
-                    if (strcmp($p->elem, $q->elem) === 0) {
-                        $ptr->next = $q->next;
-                        $q->next   = null;
-                        unset($q->next);
-                        $q = $ptr->next;
-                        $this->length--;
-                    } else {
-                        $ptr = $q;
-                        $q   = $q->next;
-                    }
-                }
-                if (strcmp($p->elem, $q->elem) === 0) {
-                    $ptr->next = null;
+        if ($this->getIsEmpty()) {
+            return $this->getAllElem();
+        }
+        $self = $this;
+        while ($self->next != null) {
+            $node = $self->next;
+            $ptr  = $self;
+            while ($node->next != null) {
+                if (strcmp($self->elem, $node->elem) === 0) {
+                    $ptr->next  = $node->next;
+                    $node->next = null;
+                    unset($node->next);
+                    $node = $ptr->next;
                     $this->length--;
+                } else {
+                    $ptr  = $node;
+                    $node = $node->next;
                 }
-                $p = $p->next;
             }
+            if (strcmp($self->elem, $node->elem) === 0) {
+                $ptr->next = null;
+                $this->length--;
+            }
+            $self = $self->next;
         }
         return $this->getAllElem();
+    }
+
+    /**
+     * 迭代器生产
+     *
+     * @param array $info
+     * @return \ArrayIterator
+     */
+    protected function generator(array $info)
+    {
+        return (new ArrayObject($info))->getIterator();
     }
 
     /**
@@ -375,6 +393,7 @@ $personal = array (
     "Two",
     "Three",
     "Four",
+    "Five",
 );
 
 $oll = new LinearChain();
