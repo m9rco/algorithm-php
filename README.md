@@ -38,7 +38,8 @@
     │    │    └── QulickQuery.php         快速查找
     │    │     
     │    ├── Structure 数据结构
-    │    │    └── LinearList.php          线性表
+    │    │    ├── LinearChain.php          线性表 单链存储
+    │    │    └── LinearOrder.php          线性表 顺序存储 
     │    │  
     │    └── Other 其他
     │         ├──  MonkeyKing.php         猴子选大王

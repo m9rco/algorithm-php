@@ -37,7 +37,7 @@
  * -------------------------------------------------------------
  * @param array
  */
-class LinearList extends ArrayObject
+class LinearOrder extends ArrayObject
 {
     const PRECURSOR_KEY    = 0;
     const PRECURSOR_VALUE  = 1;
@@ -342,9 +342,19 @@ class LinearList extends ArrayObject
         }
         $debug      = debug_backtrace()[1];
         $reflection = new ReflectionMethod($this, $debug['args'][0]);
-        $args       = isset($debug['args'][1]) ? implode(',', $debug['args'][1]) : "";
-        echo $reflection->getDocComment() . PHP_EOL;
-        echo "{$debug['args'][0]}({$args})\n" . PHP_EOL;
+        $args       = '';
+        if(isset($debug['args'][1])){
+            foreach ($debug['args'][1] as &$value){
+                if( is_array($value )){
+                    $args .= json_encode($debug['args'][1]).', ';
+                }else{
+                    $args .= $value.', ';
+                }
+            }
+        }
+        $args = trim($args,', ');
+        echo "\t".$reflection->getDocComment() . PHP_EOL;
+        echo "\t{$debug['args'][0]}({$args})\n" . PHP_EOL;
     }
 }
 
@@ -353,14 +363,14 @@ $echo = function ($str, $action) {
     echo "--------------------------- " . PHP_EOL;
 };
 
-$oll = new LinearList(array ('name' => 'Jack', 10, "age", 'msg' => 10, 666));
+$oll = new LinearOrder(array ('name' => 'Jack', 10, "age", 'msg' => 10, 666));
 $echo('判断线性表是否为空', $oll->isEmpty());
 $echo('返回线性表的长度', $oll->getLength());
 $echo('根据下标返回线性表中的某个元素', $oll->getElement(1));
 $echo('返回线性表中某个元素的位置', $oll->getElementPosition(666));
-$echo('返回线性表中某个元素的直接前驱元素', $oll->getElementPrecursor(666, LinearList::PRECURSOR_VALUE));
-$echo('返回线性表中某个元素的直接后继元素', $oll->getElementSubsequent(0, LinearList::SUBSEQUENT_KEY));
+$echo('返回线性表中某个元素的直接前驱元素', $oll->getElementPrecursor(666, LinearOrder::PRECURSOR_VALUE));
+$echo('返回线性表中某个元素的直接后继元素', $oll->getElementSubsequent(0, LinearOrder::SUBSEQUENT_KEY));
 $echo('根据元素位置返回线性表中的某个元素', $oll->getElemForPos(2));
-$echo('根据下标或者元素值删除线性表中的某个元素', $oll->getDeleteElement('name', LinearList::DELETE_KEY));
-$echo('在指定位置插入一个新的结点', $oll->getInsertElement(3, "插入新节点", "qzone", LinearList::ASSIGN_KEY));
+$echo('根据下标或者元素值删除线性表中的某个元素', $oll->getDeleteElement('name', LinearOrder::DELETE_KEY));
+$echo('在指定位置插入一个新的结点', $oll->getInsertElement(3, "插入新节点", "qzone", LinearOrder::ASSIGN_KEY));
 $echo('$oll->oll的内容 ', $oll->oll);
