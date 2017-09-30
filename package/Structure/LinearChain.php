@@ -26,11 +26,11 @@
  * 当n=0时，称为空表。
  * 当n>0时，将非空的线性表记作： (a1，a2，…an) a1称为线性表的第一个(首)结点，an称为线性表的最后一个(尾)结点。
  * -------------------------------------------------------------
- * [线性表顺序存储]
+ * [线性表单链存储]
  * =======
  * 用一组任意的存储单元存储线性表中的数据元素，用这种方法存储的线性表简称线性链表。
  * -------------------------------------------------------------
- * [顺序存储的线性表的特点]
+ * [单链存储的线性表的特点]
  * =======
  *    - 存储链表中结点的一组任意的存储单元可以是连续的，也可以是不连续的，甚至是零散分布在内存中的任意位置上
  *    - 链表中结点的逻辑顺序和物理顺序不一定相同
@@ -312,8 +312,7 @@ class LinearChain
             $ptr  = $self;
             while ($node->next != null) {
                 if (strcmp($self->elem, $node->elem) === 0) {
-                    $ptr->next  = $node->next;
-                    $node->next = null;
+                    $ptr->next = $node->next;
                     unset($node->next);
                     $node = $ptr->next;
                     $this->length--;
@@ -321,10 +320,6 @@ class LinearChain
                     $ptr  = $node;
                     $node = $node->next;
                 }
-            }
-            if (strcmp($self->elem, $node->elem) === 0) {
-                $ptr->next = null;
-                $this->length--;
             }
             $self = $self->next;
         }
