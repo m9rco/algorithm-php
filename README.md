@@ -39,6 +39,7 @@
     │    │    └── QulickQuery.php         快速查找
     │    │     
     │    ├── Structure 数据结构
+    │    │    ├── StackExample.php         堆栈   先进后出 LIFO (Last In First Out)
     │    │    ├── LinearChain.php          线性表 单链存储
     │    │    └── LinearOrder.php          线性表 顺序存储 
     │    │  
