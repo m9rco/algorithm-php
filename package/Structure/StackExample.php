@@ -214,11 +214,11 @@ $echo = function ($str, $action) {
     echo "--------------------------- " . PHP_EOL;
 };
 
-$stack = new StackExample();
-$stack->setPushStack('First');
-$stack->setPushStack('Second');
-$echo('返回栈内所有元素', $stack->getAllElem());
-$stack->setPushStack('Third');
-$echo('返回栈内所有元素', $stack->getAllElem());
-$stack->getPopStack();
-$echo('返回栈内所有元素', $stack->getAllElem());
+//$stack = new StackExample();
+//$stack->setPushStack('First');
+//$stack->setPushStack('Second');
+//$echo('返回栈内所有元素', $stack->getAllElem());
+//$stack->setPushStack('Third');
+//$echo('返回栈内所有元素', $stack->getAllElem());
+//$stack->getPopStack();
+//$echo('返回栈内所有元素', $stack->getAllElem());
