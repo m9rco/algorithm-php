@@ -11,13 +11,10 @@
 $card_num = 54;//牌数
 function washCard($card_num)
 {
-    $cards = $tmp = array ();
-    $tmp   = range(0, $card_num);
-    for ($i = 0; $i < $card_num; $i++) {
-        $index     = rand(0, $card_num - $i - 1);
-        $cards[$i] = $tmp[$index];
-        unset($tmp[$index]);
-        $tmp = array_values($tmp);
+    $cards = range(1, $card_num);
+    for ($i = $card_num - 1; $i > 0; $i--) {
+        $rnd = rand(0,$i - 1);
+        list($cards[$rnd],$cards[$i]) = array($cards[$i],$cards[$rnd]);
     }
     return $cards;
 }
