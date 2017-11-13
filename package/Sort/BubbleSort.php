@@ -91,3 +91,47 @@ Array
     [9] => 423
 )
  */
+
+// +----------------------------------------------------------------------
+// |                        冒泡排序优化V1
+// |引入标签flag。每趟排序开始前，先将flag置为false。若排序过程中发生了交换，则将其置为true。
+// |各趟排序结束时检查flag，若未发生交换则终止算法。
+// +----------------------------------------------------------------------
+function BubbleSortOptimizeV1(array $container)
+{
+    $len = count($container);
+
+    for ($i = 0; $i < $len; $i++) {
+        $flag = false;
+
+        for ($j = $i + 1; $j < $len; $j++) {
+            if ($container[$i] > $container[$j]) {
+                list($container[$i], $container[$j]) = array($container[$j], $container[$i]);
+                $flag = true;
+            }
+        }
+
+        if (!$flag) {
+            break;
+        }
+    }
+
+    return $container;
+}
+
+print_r(BubbleSortOptimizeV1([4, 21, 41, 2, 53, 1, 213, 31, 21, 423]));
+/*
+Array
+(
+    [0] => 1
+    [1] => 2
+    [2] => 4
+    [3] => 21
+    [4] => 21
+    [5] => 31
+    [6] => 41
+    [7] => 53
+    [8] => 213
+    [9] => 423
+)
+ */
