@@ -12,7 +12,12 @@
  * 然后再从底至上地这样升，循环直至十个气泡大小有序。
  * 在冒泡排序中，最重要的思想是两两比较，将两者较少的升上去
  *
- * @param  array $container
+ */
+
+/**
+ * BubbleSort
+ *
+ * @param array $container
  * @return array
  */
 function BubbleSort(array $container)
@@ -55,39 +60,4 @@ array(10) {
   [9] =>
   int(423)
 }
- */
-
-// +----------------------------------------------------------------------
-// |                        方法二
-// +----------------------------------------------------------------------
-function BubbleSortV2(array $container)
-{
-    $len = count($container);
-    // 也可以用foreach
-    for ($i = 0; $i < $len - 1; $i++) {
-        for ($j = $i + 1; $j < $len; $j++) {
-            if ($container[$i] > $container[$j]) {
-                list($container[$i], $container[$j]) = array($container[$j], $container[$i]);
-            }
-        }
-    }
-
-    return $container;
-}
-
-print_r(BubbleSort([4, 21, 41, 2, 53, 1, 213, 31, 21, 423]));
-/*
-Array
-(
-    [0] => 1
-    [1] => 2
-    [2] => 4
-    [3] => 21
-    [4] => 21
-    [5] => 31
-    [6] => 41
-    [7] => 53
-    [8] => 213
-    [9] => 423
-)
  */

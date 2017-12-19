@@ -14,10 +14,14 @@
  * 但将最后一个元素除外（让数组多一个空间才有插入的位置），而第二部分就只包含这一个元素（即待插入元素）。
  * 在第一部分排序完成后，再将这个最后元素插入到已排好序的第一部分中。
  *
- * @param $container
- * @return mixed
  */
 
+/**
+ * InsertSort
+ *
+ * @param array $container
+ * @return array
+ */
 function InsertSort(array $container)
 {
     $count = count($container);

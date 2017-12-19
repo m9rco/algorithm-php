@@ -12,9 +12,14 @@
  * 在英文词典里查找“apple”，你下意识里翻开词典是翻前面的书页还是后面的书页呢？如果再查“zoo”,你又会怎么查？
  * 显然你不会从词典中间开始查起，而是有一定目的地往前或往后翻。
  *
- * @param $container
- * @param $num
- * @return int
+ */
+
+/**
+ * insertQuery
+ *
+ * @param array $container
+ * @param       $num
+ * @return bool|float|int
  */
 function insertQuery(array $container, $num)
 {
@@ -47,3 +52,4 @@ function insertQuery(array $container, $num)
 }
 
 echo insertQuery([4, 5, 7, 8, 9, 10, 8], 8);
+// 6
