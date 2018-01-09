@@ -62,6 +62,7 @@
     │         ├──  OnlyNumbers.php        求唯一数
     │         ├──  PokerGames.php         洗扑克牌
     │         ├──  Interval.php           抽奖区间算法
+    │         ├──  Encryption.php         对称加密算法
     │         └──  BigSmallReplace.php    Hello World 输出 Olleh Dlrow
     │     
     ├──LICENSE
