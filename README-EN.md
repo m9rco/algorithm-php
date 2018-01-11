@@ -49,6 +49,7 @@
     │         ├──  OnlyNumbers.php        
     │         ├──  Interval.php        
     │         ├──  AntsClimb.php        
+    │         ├──  Encryption.php        
     │         └──  BigSmallReplace.php    
     │     
     ├──LICENSE 
