@@ -48,6 +48,7 @@
     │         ├──  GetCattle.php          
     │         ├──  OnlyNumbers.php        
     │         ├──  Interval.php        
+    │         ├──  Maze.php        
     │         ├──  AntsClimb.php        
     │         ├──  Encryption.php        
     │         └──  BigSmallReplace.php    
