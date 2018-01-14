@@ -48,6 +48,7 @@
     │         ├──  GetCattle.php          
     │         ├──  OnlyNumbers.php        
     │         ├──  Interval.php        
+    │         ├──  Maze.php        
     │         └──  BigSmallReplace.php    
     │     
     ├──LICENSE 
