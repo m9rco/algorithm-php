@@ -52,6 +52,8 @@
     │         ├──  AntsClimb.php        
     │         ├──  Encryption.php        
     │         ├──  ElevatorDispatch.php      
+    │         ├──  kmp.php      
+    │         ├──  TraversalOfBinary.php      
     │         └──  BigSmallReplace.php    
     │     
     ├──LICENSE 
