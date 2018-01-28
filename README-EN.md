@@ -54,6 +54,7 @@
     │         ├──  ElevatorDispatch.php      
     │         ├──  kmp.php      
     │         ├──  TraversalOfBinary.php      
+    │         ├──  PointInTriangle.php      
     │         └──  BigSmallReplace.php    
     │     
     ├──LICENSE 
