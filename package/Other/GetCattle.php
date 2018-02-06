@@ -21,19 +21,18 @@
 function getCattle($n)
 {
     static $num = 1;
-    for ($i =1; $i<=$n;$i++){
-        if( $i == 20) break;
-        if($i >= 4 && $i <15){
-            if($i % 4 == 0 ){
-                getCattle($n - $i);
-                $num++;
-            }
-            $num++;
+    for ($i = 1; $i <= $n; $i++) {
+        if ($i == 20) {
+            $num--; //死亡需减一
+        } else if ($i >= 4 && $i < 15) {
+            $num++; //生小母牛（这里有小母牛）
+            getCattle($n - $i); //小母牛生小母牛（这里不包含小母牛）
         }
     }
     return $num;
 }
-echo '牛年共有：'.getCattle(10);
+
+echo '牛年共有：' . getCattle(10);
 
 /*
 123456789
