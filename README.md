@@ -215,11 +215,11 @@ left|right
 
 ## 致谢
 感谢以下朋友的issue或pull request：
-
 - [hailwood ](https://github.com/hailwood)
 - [zhangxuanru](https://github.com/zhangxuanru)
 - [ifreesec](https://github.com/ifreesec)
 - [openset](https://github.com/openset)
-
+- [openset](https://github.com/openset)
+- [Neroxiezi](https://github.com/Neroxiezi)
 ## License
 MIT
