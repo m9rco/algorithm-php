@@ -1,18 +1,22 @@
 <?php
 
 /**
- * BidirectionalQueue
+ * 双向队列
  *
  * @author   Pu ShaoWei <marco0727@gamil.com>
- * @date     2017/9/13
+ * @date     2018/1/11
  * @license  MIT
  * -------------------------------------------------------------
- * 思路分析： 考察PHP几个内置数组的函数
+ * 双向队列的实现及应用
  * -------------------------------------------------------------
+ * 思路分析： 考察PHP几个内置数组的函数
  * 双向队列是一种双向开口的连续线性空间，可以高效的在头尾两端插入和删除元素
- * @param      $n
- * @return int
  */
+
+// +--------------------------------------------------------------------------
+// | 解题方式    | 这儿，可能有用的解决方案
+// +--------------------------------------------------------------------------
+
 class BidirectionalQueue
 {
     /**
@@ -34,8 +38,7 @@ class BidirectionalQueue
     /**
      * BidirectionalQueue 初始化.
      *
-     *  @param int $type
-
+     * @param int $type
      * @param int $maxLength
      */
     public function __construct($type = self::C_AT_BOTH_ENDS, $maxLength = 0)
@@ -127,7 +130,6 @@ class BidirectionalQueue
 
     /**
      * 获取配置常量
-     *
      */
     protected function getConfig()
     {
@@ -141,4 +143,10 @@ class BidirectionalQueue
         ];
     }
 }
+
+// +--------------------------------------------------------------------------
+// | 方案测试    | php `this.php` || PHPStorm -> 右键 -> Run `this.php`
+// +--------------------------------------------------------------------------
+
+
 new BidirectionalQueue();

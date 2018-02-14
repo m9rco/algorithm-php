@@ -1,6 +1,7 @@
 <?php
+
 /**
- * ColorBricks 彩色砖块
+ * 彩色砖块
  *
  * @author   Pu ShaoWei <pushaowei0727@gmail.com>
  * @date     2017/9/1
@@ -36,8 +37,17 @@
  *           ABAB
  *  输出例子1:
  *           2
+ */
+
+// +--------------------------------------------------------------------------
+// | 解题方式    | 这儿，可能有用的解决方案
+// +--------------------------------------------------------------------------
+
+/**
+ * ColorBricks
+ *
  * @param $inputting
- * @return mixed
+ * @return bool|int
  */
 function ColorBricks($inputting)
 {
@@ -79,5 +89,10 @@ function ColorBricks($inputting)
     }
     return $counter;
 }
+
+
+// +--------------------------------------------------------------------------
+// | 方案测试    | php `this.php` || PHPStorm -> 右键 -> Run `this.php`
+// +--------------------------------------------------------------------------
 
 echo ColorBricks("AABB");

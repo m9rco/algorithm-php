@@ -1,14 +1,36 @@
 <?php
 
 /**
- *  根据向量叉集计算一个点是否在三角形当中
+ * 利用向量叉集判断一个点是否在三角形中
  *
+ * @author   Neroxiezi  <lampxiezi@163.com>
+ * @date     2018/1/11
+ * @license  MIT
+ * -------------------------------------------------------------
+ *   利用向量叉集判断一个点是否在三角形中
  */
+
+// +--------------------------------------------------------------------------
+// | 解题方式    | 这儿，可能有用的解决方案
+// +--------------------------------------------------------------------------
+
 class PointInTriangle
 {
+    /**
+     * @var array
+     */
     protected $point;
+    /**
+     * @var array
+     */
     protected $triangle;
 
+    /**
+     * PointInTriangle constructor.
+     *
+     * @param array $point
+     * @param array $triangle
+     */
     public function __construct(array $point, array $triangle)
     {
         $this->point = $point;
@@ -18,19 +40,37 @@ class PointInTriangle
         $this->triangle = $triangle;
     }
 
-    //向量叉集计算
+    /**
+     * 向量叉集计算
+     *
+     * @param $a
+     * @param $b
+     * @param $p
+     * @return mixed
+     */
     private function cross($a, $b, $p)
     {
         return ($b['x'] - $a['x']) * ($p['y'] - $a['y']) - ($b['y'] - $a['y']) * ($p['x'] - $a['x']);
     }
 
-    //判断是否在左边
+    /**
+     * 判断是否在左边
+     *
+     * @param $a
+     * @param $b
+     * @param $p
+     * @return bool
+     */
     private function toLeft($a, $b, $p)
     {
         return $this->cross($a, $b, $p) > 0;
     }
 
-    //开始构造三角形
+    /**
+     * 开始构造三角形
+     *
+     * @return string
+     */
     public function inTriangle()
     {
         $res = $this->toLeft($this->triangle[0], $this->triangle[1], $this->point);
@@ -49,6 +89,11 @@ class PointInTriangle
     }
 }
 
+
+// +--------------------------------------------------------------------------
+// | 方案测试    | php `this.php` || PHPStorm -> 右键 -> Run `this.php`
+// +--------------------------------------------------------------------------
+
 $point = [
     'x' => 4,
     'y' => 1
@@ -64,6 +109,5 @@ $triangle = [
 ];
 
 $obj = new PointInTriangle($point1, $triangle);
-
 var_dump($obj->inTriangle());
 exit;

@@ -11,8 +11,9 @@
  * @author    Pu ShaoWei <pushaowei@360.cn>
  * @date      2017/12/3
  * @version   1.0
- * @license   QiHoo
+ * @license   MIT
  */
+
 class KitchenQueue
 {
     /**

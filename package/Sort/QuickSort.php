@@ -1,9 +1,10 @@
 <?php
 /**
- * @example  快速排序
+ * 快速排序
+ *
  * @author   ShaoWei Pu <pushaowei0727@gmail.com>
  * @date     2017/6/17
- * @license  Mozilla
+ * @license  MIT
  * -------------------------------------------------------------
  * 思路分析：从数列中挑出一个元素，称为 “基准”（pivot) 
  * -------------------------------------------------------------
@@ -12,13 +13,18 @@
  * 递归地（recursive）把小于基准值元素的子数列和大于基准值元素的子数列排序
  */
 
+
+// +--------------------------------------------------------------------------
+// | 解题方式    | 这儿，可能有用的解决方案
+// +--------------------------------------------------------------------------
+
 /**
- * QulickSort
+ * QuickSort
  *
  * @param array $container
  * @return array
  */
-function QulickSort(array $container)
+function QuickSort(array $container)
 {
     $count = count($container);
     if ($count <= 1) {
@@ -32,12 +38,17 @@ function QulickSort(array $container)
             $right[] = $container[$i];
         }
     }
-    $left  = QulickSort($left);
-    $right = QulickSort($right);
+    $left  = QuickSort($left);
+    $right = QuickSort($right);
     return array_merge($left, [$container[0]], $right);
 }
 
-var_dump(QulickSort([4, 21, 41, 2, 53, 1, 213, 31, 21, 423]));
+// +--------------------------------------------------------------------------
+// | 方案测试    | php `this.php` || PHPStorm -> 右键 -> Run `this.php`
+// +--------------------------------------------------------------------------
+
+
+var_dump(QuickSort([4, 21, 41, 2, 53, 1, 213, 31, 21, 423]));
 /**
  * array(10) {
 [0] =>

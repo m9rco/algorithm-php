@@ -1,5 +1,19 @@
 <?php
-/*构造迷宫二维数组*/
+
+/**
+ * 迷宫寻址
+ *
+ * @author   Neroxiezi  <lampxiezi@163.com>
+ * @date     2018/1/11
+ * @license  MIT
+ * -------------------------------------------------------------
+ *   构造迷宫二维数组
+ */
+
+// +--------------------------------------------------------------------------
+// | 解题方式    | 这儿，可能有用的解决方案
+// +--------------------------------------------------------------------------
+
 
 //迷宫一
 for ($l = 0; $l <= 5; $l++) {
@@ -21,6 +35,18 @@ for ($l = 0; $l <= 5; $l++) {
 }
 echo '<br/><br/><br/><span style="color:red">寻地址算法的实现：</span><br/>';
 
+/**
+ * findPath
+ *
+ * @param $i
+ * @param $j
+ * @param $dir
+ * @param $arr
+ * @param $iline
+ * @param $jline
+ * @param $dirline
+ * @return int
+ */
 function findPath($i, $j, $dir, $arr, $iline, $jline, $dirline)
 {
 
@@ -258,6 +284,5 @@ function findPath($i, $j, $dir, $arr, $iline, $jline, $dirline)
 }
 
 $a[] = $b[] = $c[] = 0;
-
 echo '初始值=>节点:($i=1,$j=1),方向:($dir=0).<br/><br/>';
 findPath(1, 1, 0, $arr, $a, $b, $c);

@@ -1,34 +1,45 @@
 <?php
+
 /**
  * Fibonacci
  *
  * @author   Pu ShaoWei <pushaowei0727@gmail.com>
  * @date     2017/8/25
- * @license  Mozilla
+ * @license  MIT
  * -------------------------------------------------------------
  * 思路分析：
  * -------------------------------------------------------------
  * 斐波那契数列（Fibonacci Sequence）又称黄金分割数列 兔子数列
  * 指的是这样一个数列：1、1、2、3、5、8、13、21
  * 在数学上，斐波纳契数列以如下被以递归的方法定义：F0=0，F1=1，Fn=F(n-1)+F(n-2)（n>=2，n∈N*）。
- *
- * @param $n
- * @return int
  */
 
-// recursion
-/*
-function Fibonacci($n)
+
+// +--------------------------------------------------------------------------
+// | 解题方式    | 这儿，可能有用的解决方案
+// +--------------------------------------------------------------------------
+
+
+/**
+ * 递归方式
+ *
+ * @param $n
+ * @return mixed
+ */
+function FibonacciRecursive($n)
 {
-    if ($n <= 1 ) {
+    if ($n <= 1) {
         return $n;
     }
     return Fibonacci($n - 1) + Fibonacci($n - 2);
 }
-*/
-// 55
 
-// not recursion
+/**
+ * 非递归方式
+ *
+ * @param $n
+ * @return mixed
+ */
 function Fibonacci($n)
 {
     if ($n <= 1) {
@@ -40,5 +51,11 @@ function Fibonacci($n)
     return $fib[$n];
 }
 
+
+
+// +--------------------------------------------------------------------------
+// | 方案测试    | php `this.php` || PHPStorm -> 右键 -> Run `this.php`
+// +--------------------------------------------------------------------------
+
 echo Fibonacci(10);
-// 55
+echo FibonacciRecursive(10);
