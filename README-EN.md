@@ -133,6 +133,6 @@ Thanks for the issue or pull request of the following friends:
 - [zhangxuanru](https://github.com/zhangxuanru)
 - [ifreesec](https://github.com/ifreesec)
 - [openset](https://github.com/openset)
-
+- [Neroxiezi](https://github.com/Neroxiezi)
 ## License
 MIT 

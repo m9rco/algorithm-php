@@ -219,7 +219,6 @@ left|right
 - [zhangxuanru](https://github.com/zhangxuanru)
 - [ifreesec](https://github.com/ifreesec)
 - [openset](https://github.com/openset)
-- [openset](https://github.com/openset)
 - [Neroxiezi](https://github.com/Neroxiezi)
 ## License
 MIT
