@@ -69,6 +69,7 @@
     │         ├──  kmp.php                算法导论-KMP算法
     │         ├──  PointInTriangle.php    向量叉集计算点是否在三角形中
     │         ├──  TraversalOfBinary.php  二叉树非递归遍历算法实现
+    │         ├──  Knapsack.php           贪心算法之背包问题实现
     │         └──  BigSmallReplace.php    Hello World 输出 Olleh Dlrow
     │     
     ├──LICENSE

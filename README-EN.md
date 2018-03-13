@@ -56,6 +56,7 @@
     │         ├──  TraversalOfBinary.php      
     │         ├──  PointInTriangle.php      
     │         └──  BigSmallReplace.php    
+    │         └──  Knapsack.php    
     │     
     ├──LICENSE 
     └──README.md
