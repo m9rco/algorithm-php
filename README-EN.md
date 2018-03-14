@@ -57,6 +57,7 @@
     │         ├──  PointInTriangle.php      
     │         └──  BigSmallReplace.php    
     │         └──  Knapsack.php    
+    │         └──  Solution.php    
     │     
     ├──LICENSE 
     └──README.md
