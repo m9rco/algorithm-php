@@ -59,6 +59,7 @@
     │         └──  Knapsack.php    
     │         └──  Solution.php    
     │         └──  RotationSort.php    
+    │         └──  Square.php    
     │     
     ├──LICENSE 
     └──README.md
