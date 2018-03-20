@@ -35,6 +35,8 @@ function BubbleSort(array $container)
                 $temp = $container[$i];
                 $container[$i] = $container[$i + 1];
                 $container[$i + 1] = $temp;
+            } else {
+                $i++;
             }
         }
     }
