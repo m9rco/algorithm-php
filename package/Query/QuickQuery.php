@@ -35,9 +35,9 @@ function QuickQuery($array, $k, $low = 0, $high = 0)
         if ($array[$mid] == $k) {
             return $mid;
         } else if ($k < $array[$mid]) {//如果没有找到，则继续查找
-            return QulickQuery($array, $k, $low, $mid - 1);
+            return QuickQuery($array, $k, $low, $mid - 1);
         } else {
-            return QulickQuery($array, $k, $mid + 1, $high);
+            return QuickQuery($array, $k, $mid + 1, $high);
         }
     }
     return -1;
