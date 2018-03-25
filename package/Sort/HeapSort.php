@@ -67,7 +67,7 @@ class HeapSort
      */
     public function createHeap()
     {
-        $i = ceil($this->count / 2) + 1;
+        $i = floor($this->count / 2) + 1;
         while ($i--) {
             $this->buildHeap($this->data, $i, $this->count);
         }
