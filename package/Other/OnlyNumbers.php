@@ -69,9 +69,9 @@ function OnlyNumbersV2(array $container)
  */
 function OnlyNumbersV3(array $container)
 {
-    $num = $container[0];
-    foreach ($container as $k => $v) {
-        if ($k > 0) $num ^= $v;
+    $num = 0;
+    foreach ($container as $v) {
+        $num ^= $v;
     }
 
     return $num;
