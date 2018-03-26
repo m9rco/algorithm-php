@@ -34,12 +34,12 @@ function InsertSort(array $container)
         $temp = $container[$i];
         $j    = $i - 1;
         // Init
-        while ($container[$j] > $temp){
+        while($j >= 0 && $container[$j] > $temp){
             $container[$j+1] = $container[$j];
-            $container[$j]   = $temp;
             $j--;
-            if ($j < 0) break;
         }
+        if($i != $j+1) 
+            $container[$j+1] = $temp;
     }
     return $container;
 }
