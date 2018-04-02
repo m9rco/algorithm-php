@@ -60,6 +60,7 @@
     │         └──  Solution.php    
     │         └──  RotationSort.php    
     │         └──  Square.php    
+    │         └──  Prim.php    
     │     
     ├──LICENSE 
     └──README.md
