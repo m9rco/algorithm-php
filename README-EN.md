@@ -61,6 +61,7 @@
     │         └──  RotationSort.php    
     │         └──  Square.php    
     │         └──  Prim.php    
+    │         └──  CartesianProduct.php 
     │     
     ├──LICENSE 
     └──README.md
