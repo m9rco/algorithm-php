@@ -40,6 +40,7 @@
     │    │    ├── BinaryQuery.php         二分查找
     │    │    ├── InseertQuery.php        插入查找
     │    │    ├── FibonacciQuery.php      斐波那契查找
+    │    │    ├── BFSQuery.php            广度优先查找
     │    │    └── QulickQuery.php         快速查找
     │    │     
     │    ├── Structure 数据结构
