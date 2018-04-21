@@ -41,6 +41,8 @@
     │    │    ├── InseertQuery.php        插入查找
     │    │    ├── FibonacciQuery.php      斐波那契查找
     │    │    ├── BFSQuery.php            广度优先查找
+    │         ├── Kmp.php                 算法导论-KMP算法
+    │         ├── DijkstraQuery.php       迪克斯特拉算法
     │    │    └── QulickQuery.php         快速查找
     │    │     
     │    ├── Structure 数据结构
@@ -67,7 +69,6 @@
     │         ├──  AntsClimb.php          蚂蚁爬杆算法
     │         ├──  Encryption.php         对称加密算法
     │         ├──  ElevatorDispatch.php   编程之美-电梯调度算法
-    │         ├──  kmp.php                算法导论-KMP算法
     │         ├──  PointInTriangle.php    向量叉集计算点是否在三角形中
     │         ├──  TraversalOfBinary.php  二叉树非递归遍历算法实现
     │         ├──  Knapsack.php           贪心算法之背包问题实现

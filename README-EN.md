@@ -36,6 +36,8 @@
     │    │    ├── InseertQuery.php        
     │    │    ├── FibonacciQuery.php      
     │    │    ├── BFSQuery.php      
+    │    │    ├── Kmp.php                 
+    │    │    ├── DijkstraQuery.php      
     │    │    └── QulickQuery.php         
     │    │     
     │    └── Other 其他 
