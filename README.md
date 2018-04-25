@@ -80,7 +80,7 @@
 │         └──  Square.php             Facebook面试题之判断四个点能否组成正方形算法
 │         └──  Prim.php               Prim算法(最小生成树算法)
 │         └──  CartesianProduct.php   笛卡尔积算法
-│          └──  RotationSort.php       面试题之平面任意四点能否组成一个矩形
+│         └──  RotationSort.php       面试题之平面任意四点能否组成一个矩形
 │
 │     
 ├──LICENSE

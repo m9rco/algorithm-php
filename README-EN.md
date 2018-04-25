@@ -66,7 +66,7 @@
 │         └──  Square.php    
 │         └──  Prim.php    
 │         └──  CartesianProduct.php 
-│					└──  RotationSort.php 
+│         └──  RotationSort.php 
 │     
 ├──LICENSE 
 └──README.md
@@ -149,12 +149,15 @@ If you find something wrong, you can initiate a [issue](https://github.com/PuSha
 Thanks for the issue or pull request of the following friends:
 
 - [hailwood ](https://github.com/hailwood)
+
 - [zhangxuanru](https://github.com/zhangxuanru)
+
 - [ifreesec](https://github.com/ifreesec)
+
 - [openset](https://github.com/openset)
+
 - [Neroxiezi](https://github.com/Neroxiezi)
 
   ## License
 
-  
 MIT 
