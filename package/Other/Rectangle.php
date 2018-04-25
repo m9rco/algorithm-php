@@ -17,21 +17,20 @@
  *
  */
 
-function rectangle($a=[],$b=[],$c=[],$d=[])
+function rectangle($one=[],$two=[],$three=[],$four=[])
 {
-    if(empty($a) || empty($b) || empty($c) || empty($d)) {
+    if(empty($one) || empty($two) || empty($three) || empty($four)) {
         return false;
     }
 
-    $base = $a;
-    $array['b'] = $b;
-    $array['c'] = $c;
-    $array['d'] = $d;
+    $array['b'] = $two;
+    $array['c'] = $three;
+    $array['d'] = $four;
     $data = [];
-    $max = "";
+
     foreach ($array as $key=>$value) {
-        $x = abs($value[0]-$a[0]);
-        $y = abs($value[1]-$a[1]);
+        $x = abs($value[0]-$one[0]);
+        $y = abs($value[1]-$one[1]);
         $data[$key] = sqrt(pow($x,2)+pow($y,2));
     }
 
@@ -74,15 +73,15 @@ var_dump(rectangle([1,2],[0,1],[1,1],[1,0])); //false
  * @param $b float
  * @return bool
  */
-function floatEq($a,$b)
+function floatEq($floatNumber1,$floatNumber2)
 {
-    if(!$a || !$b) {
+    if(!$floatNumber1 || !$floatNumber2) {
         return false;
     }
     //精度
     $epsilon = 0.00001;
 
-    if(abs($a-$b) < $epsilon) {
+    if(abs($floatNumber1-$floatNumber2) < $epsilon) {
         return true;
     }
     return false;
