@@ -62,7 +62,8 @@ function judge(array $array)
     return false;
 
 }
-$res = judge([1,2,3,4,5]);
-$res = judge([1,2,0,3,5]);
-$res = judge([1,5,0,3,0]);
-var_dump($res);
+$res1 = judge([1,2,3,4,5]); //没有王
+$res2 = judge([1,2,0,3,5]);// 一张王
+$res3 = judge([1,5,0,3,0]); // 两张王牌
+$res4 = judge([1,5,8,3,7]);
+var_dump($res1,$res2,$res3,$res4);
