@@ -68,6 +68,7 @@
 │         └──  CartesianProduct.php 
 │         └──  Square.php 
 │         └──  Judge.php 
+│         └──  Factorial.php 
 │     
 ├──LICENSE 
 └──README.md
