@@ -1,4 +1,4 @@
-<h1 align="center">:whale: 用 PHP 的方式实现的各类算法合集 :whale: </h1>
+​<h1 align="center">:whale: 用 PHP 的方式实现的各类算法合集 :whale: </h1>
 
 <p align="center">
 <a href="https://github.com/PuShaoWei/arithmetic-php#简易结构">
@@ -80,7 +80,9 @@
 │         └──  Square.php             Facebook面试题之判断四个点能否组成正方形算法
 │         └──  Prim.php               Prim算法(最小生成树算法)
 │         └──  CartesianProduct.php   笛卡尔积算法
-│         └──  RotationSort.php       面试题之平面任意四点能否组成一个矩形
+│         └──  Square.php             面试题之平面任意四点能否组成一个矩形
+│         └──  Judge.php              面试题之扑克牌中任选五张判断是不是顺子
+│         └──  Factorial.php          面试题之N的阶乘末尾有多少个0
 │
 │     
 ├──LICENSE
@@ -141,7 +143,7 @@ log<sub>10</sub>100 相当于问"将多少个10相乘的结果为100"，答案�
 | 1 000 000 000 个元素 | 11天   | 30ms |
 
 - 大`O`表示法指出了算法有多快，例如列表包含`n`个元素，简单查找需要检查每个元素，因此需要执行`n`次操作
-使用大`O`表示法这个运行时间为`O(n)`,二分查找需要执行log<sub>n</sub>次操作，使用大`O`表示为`O(log n)`
+  使用大`O`表示法这个运行时间为`O(n)`,二分查找需要执行log<sub>n</sub>次操作，使用大`O`表示为`O(log n)`
   - 一些常见的大O运行时间
 - O(log n) ,也叫对数时间，这样的算法包括二分算法
 - O(n),也叫线性时间，这样的算法包括简单查找。

@@ -1,4 +1,4 @@
-<h1 align="center">:whale:A collection of algorithms that are implemented in PHP:whale: </h1>
+​<h1 align="center">:whale:A collection of algorithms that are implemented in PHP:whale: </h1>
 
 <p align="center">
 <a href="https://github.com/PuShaoWei/arithmetic-php#简易结构">
@@ -66,7 +66,9 @@
 │         └──  Square.php    
 │         └──  Prim.php    
 │         └──  CartesianProduct.php 
-│         └──  RotationSort.php 
+│         └──  Square.php 
+│         └──  Judge.php 
+│         └──  Factorial.php 
 │     
 ├──LICENSE 
 └──README.md
@@ -112,7 +114,7 @@ In this case, you know how fast these algorithms are
 | 1 000 000 000 | 11day        | 30ms          |
 
 - ` O ` said hair is pointed out that how fast algorithms, such as list contains ` n ` element, a simple search need to check each element, so you need to perform ` n ` time operations
-Using large ` O ` said ` O (n) to make this operation `, binary search need to perform log<sub>n</sub> using large ` O ` said to`O(log n)`
+  Using large ` O ` said ` O (n) to make this operation `, binary search need to perform log<sub>n</sub> using large ` O ` said to`O(log n)`
   - Some common big O runtime
 - O(log n) ,It's also called log time, and this algorithm includes binary algorithms
 - O(n),Also known as linear time, this algorithm includes simple lookups.
@@ -130,7 +132,7 @@ Using large ` O ` said ` O (n) to make this operation `, binary search need to p
 1. From a procedural point of view, the recursion manifests itself as calling itself, and the loop does not have this form.
 2. Recursive proceed from the ultimate goal of the problem, and gradually to a complex problem into a simple problem, and simple question solution and complicated problem, at the same time the presence of the benchmark, can eventually get a problem, is the reverse. And the circulation is from the simple question, step by step forward development, finally get the question, is positive.
 3. Any cycle can be represented by recursion, but it is necessary to use the loop to achieve recursion (except for one-way recursion and tail recursion), and the stack structure must be introduced to stack the stack.
-4.In general, non-recursive efficiency is higher than recursion. And recursive function calls are expensive and recursive times are limited by stack size.
+   4.In general, non-recursive efficiency is higher than recursion. And recursive function calls are expensive and recursive times are limited by stack size.
 
 ## Progressive learning
 
