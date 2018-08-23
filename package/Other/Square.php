@@ -20,8 +20,8 @@ class Square
     {
         $result = [];
         if (count($this->point) != 4) return false;
-        for ($i = 0; $i < count($this->point); $i++) {
-            for ($j = $i + 1; $j < count($this->point); $j++) {
+        for ($i = 0; $i < 4; $i++) {
+            for ($j = $i + 1; $j < 4; $j++) {
                 $result[]=$this->_calculation($i,$j);
             }
         }
@@ -35,7 +35,7 @@ class Square
 
     private function _calculation($i, $j)
     {
-        return ($this->point[$i][0] - $this->point[$j][0]) * ($this->point[$i][0] - $this->point[$j][0]) + ($this->point[$i][1] - $this->point[$j][1]) * ($this->point[$i][1] - $this->point[$j][1]);
+        return pow($this->point[$i][0] - $this->point[$j][0],2) + pow($this->point[$i][1] - $this->point[$j][1] ,2);
     }
 }
 
