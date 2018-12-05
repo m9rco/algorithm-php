@@ -55,7 +55,7 @@ function BinaryQuery(array $container, $search)
  */
 function BinaryQueryRecursive(array $container, $search, $low = 0, $top = 'default')
 {
-    $top == 'default' && $top = count($container);
+    $top === 'default' && $top = count($container);
     if ($low <= $top) {
         $mid = intval(floor($low + $top) / 2);
         if (!isset($container[$mid])) {
