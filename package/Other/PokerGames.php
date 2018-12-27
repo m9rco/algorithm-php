@@ -6,41 +6,74 @@
  * @author   Pu ShaoWei <marco0727@gamil.com>
  * @date     2017/9/18
  * @license  MIT
+ * -------------------------------------------------------------
+ * 随机玩法
  */
 
-$card_num = 54;//牌数
+
+// +--------------------------------------------------------------------------
+// | 解题方式    | 这儿，可能有用的解决方案
+// +--------------------------------------------------------------------------
+
+/**
+ * washCard
+ *
+ * @param $card_num
+ * @return array
+ */
 function washCard($card_num)
 {
     $cards = range(1, $card_num);
     for ($i = $card_num - 1; $i > 0; $i--) {
-        $rnd = rand(0,$i - 1);
-        list($cards[$rnd],$cards[$i]) = array($cards[$i],$cards[$rnd]);
+        $rnd = rand(0, $i - 1);
+        list($cards[$rnd], $cards[$i]) = array ($cards[$i], $cards[$rnd]);
     }
     return $cards;
 }
 
-// 测试：
-//var_dump(washCard($card_num));die;
 
 /**
  * PokerGames   纯属娱乐，有空再优化, 这样够随机吧
- *
- * @uses     description
- * @version  1.0
- * @author   Pu ShaoWei <marco0727@gamil.com>
  */
 class PokerGames
 {
+    /**
+     *
+     */
     const RANDOM = "https://www.random.org/integers/?num=%d&min=1&max=%d&col=1&base=10&format=plain&rnd=new";
-    const LIMIT  = 10;
+    /**
+     *
+     */
+    const LIMIT = 10;
 
+    /**
+     * @var
+     */
     protected $resources;
+    /**
+     * @var
+     */
     protected $tally;
+    /**
+     * @var float
+     */
     protected $i;
+    /**
+     * @var
+     */
     protected $count;
+    /**
+     * @var bool
+     */
     protected $clear;
+    /**
+     * @var array
+     */
     protected $container = array ();
-    protected $poker     = array ();
+    /**
+     * @var array
+     */
+    protected $poker = array ();
 
     /**
      * PokerGames constructor.
@@ -164,4 +197,10 @@ class PokerGames
     }
 }
 
+// +--------------------------------------------------------------------------
+// | 方案测试    | php `this.php` || PHPStorm -> 右键 -> Run `this.php`
+// +--------------------------------------------------------------------------
+
+$card_num = 54;//牌数
+var_dump(washCard($card_num));
 new PokerGames();

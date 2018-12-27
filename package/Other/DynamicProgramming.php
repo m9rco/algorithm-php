@@ -1,17 +1,29 @@
 <?php
 
 /**
- * DynamicProgramming
+ * 动态规划
  *
  * @author   Pu ShaoWei <marco0727@gamil.com>
  * @date     2017/8/28
- * @license  Mozilla
+ * @license  MIT
  * -------------------------------------------------------------
  * 思路分析：动态规划原理思想，max(opt(i-1,w),wi+opt(i-1,w-wi)) 当中最大值，opt(i-1,w-wi)指上一个最优解
  * -------------------------------------------------------------
  * 一个承受最大重量为W的背包，现在有n个物品，每个物品重量为t, 每个物品的价值为v。
  * 要使得这个背包重量最大(但不能超过W),同时又需要背包的价值最大
- * @return int
+ */
+
+// +--------------------------------------------------------------------------
+// | 解题方式    | 这儿，可能有用的解决方案
+// +--------------------------------------------------------------------------
+
+/**
+ * DynamicProgramming
+ *
+ * @param $maxSize
+ * @param $goods
+ * @param $cost
+ * @return mixed
  */
 function DynamicProgramming($maxSize, $goods, $cost)
 {
@@ -42,7 +54,11 @@ function DynamicProgramming($maxSize, $goods, $cost)
             }
         }
     }
-    var_dump($container[$j - 1][$i - 1]);
+    return $container[$j - 1][$i - 1];
 }
 
-echo DynamicProgramming(15, [3, 4, 5, 6], [8, 7, 4, 9]);
+// +--------------------------------------------------------------------------
+// | 方案测试    | php `this.php` || PHPStorm -> 右键 -> Run `this.php`
+// +--------------------------------------------------------------------------
+
+echo DynamicProgramming(15, array (3, 4, 5, 6), array (8, 7, 4, 9));
