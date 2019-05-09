@@ -84,7 +84,7 @@
 │         └──  Square.php             面试题之平面任意四点能否组成一个矩形
 │         └──  Judge.php              面试题之扑克牌中任选五张判断是不是顺子
 │         └──  Factorial.php          面试题之N的阶乘末尾有多少个0
-│
+|         └──  HashTable.php          HashTable
 │     
 ├──LICENSE
 └──README.md
