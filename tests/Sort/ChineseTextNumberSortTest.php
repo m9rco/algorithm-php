@@ -18,8 +18,11 @@ class ChineseTextNumberSortTest extends PHPUnit\Framework\TestCase
      */
     public function testAnalysisText()
     {
-        new ChineseTextNumberSort();
-        var_dump(1);
-        die;
+        $chineseObj = new ChineseTextNumberSort();
+        $this->assertTrue($chineseObj->isCompletelyChinese('我艹'), 'Is not entirely Chinese');
+        $this->assertEquals($chineseObj->parsingText('第一十二章四十五'), 12);
+        $this->assertEquals($chineseObj->parsingText('十三'), 13);
+        $this->assertEquals($chineseObj->parsingText('二十三'), 23);
+        $this->assertEquals($chineseObj->parsingText('一十三'), 13);
     }
 }
