@@ -18,6 +18,7 @@ class ChineseTextNumberSortTest extends PHPUnit\Framework\TestCase
      */
     public function testAnalysisText()
     {
+        new ChineseTextNumberSort();
         var_dump(1);
         die;
     }

@@ -12,6 +12,11 @@
     "phpunit/phpunit": "~6.0",
     "mockery/mockery": "~0.9"
   },
+  "autoload": {
+    "classmap": [
+      "./src"
+    ]
+  },
   "autoload-dev": {
     "classmap": [
       "tests/"
