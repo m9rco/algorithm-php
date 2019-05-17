@@ -1,0 +1,9 @@
+version: '2.0'
+services:
+  php71-dev:
+    image: "m9rco/php:7.1-dev"
+    ports:
+      - "2222:22"
+      - "29000:9000"
+    volumes:
+      - $PWD:/app:rw
