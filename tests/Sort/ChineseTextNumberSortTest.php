@@ -2,7 +2,7 @@
 /**
  * Test
  *
- * @author    Pu ShaoWei <pushaowei@360.cn>
+ * @author    Pu ShaoWei
  * @date      2019-05-17
  * @version   1.0
  */
