@@ -69,6 +69,7 @@
 │         └──  Square.php 
 │         └──  Judge.php 
 │         └──  Factorial.php 
+|         └──  HashTable.php
 │     
 ├──LICENSE 
 └──README.md
