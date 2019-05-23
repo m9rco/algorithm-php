@@ -38,6 +38,7 @@
     "ext-openssl": "*",
     "php": ">=5.6.4",
     "ext-curl": "*",
-    "stojg/recommend": "^1.0"
+    "stojg/recommend": "^1.0",
+    "ext-iconv": "*"
   }
 }
