@@ -1,26 +1,28 @@
 ​<h1 align="center">:whale:A collection of algorithms that are implemented in PHP:whale: </h1>
 
 <p align="center">
-<a href="https://github.com/PuShaoWei/arithmetic-php#简易结构">
+<a href="https://github.com/m9rco/algorithm-php#简易结构">
   <img src="https://img.shields.io/badge/php-done-brightgreen.svg" alt="php">
 </a>
-<a href="https://github.com/PuShaoWei/arithmetic-php">
-    <img src="https://img.shields.io/github/issues-pr-raw/arithmetic-php/cdnjs.svg">
+<a href="https://github.com/m9rco/algorithm-php/pulls">
+    <img src="https://img.shields.io/github/issues-pr-raw/m9rco/algorithm-php.svg" alt="Open pull requests">
 </a>
-<a href="https://github.com/PuShaoWei/arithmetic-php">
-    <img src="https://img.shields.io/codacy/grade/e27821fb6289410b8f58338c7e0bc686.svg">
+<a href="https://github.com/m9rco/algorithm-php">
+    <img src="https://img.shields.io/badge/algorithms-learning%20examples-blue.svg" alt="Algorithm learning examples">
 </a>
-<a href="https://github.com/PuShaoWei/arithmetic-php">
-    <img src="https://img.shields.io/travis/rust-lang/rust.svg">
+<a href="./CONTRIBUTING.md">
+    <img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg" alt="Contributions welcome">
 </a>
-<a href="https://github.com/PuShaoWei/arithmetic-php">
-    <img src="https://img.shields.io/github/license/mashape/apistatus.svg">
+<a href="./LICENSE">
+    <img src="https://img.shields.io/github/license/m9rco/algorithm-php.svg" alt="License">
 </a>
 </p>
 
-<p align="center"> <a href="./README.md">中文版</a>　<p>
+<p align="center"> <a href="./README.md">中文版</a> · <a href="./CONTRIBUTING.md">Contributing</a></p>
 
-## Simple structure,
+Algorithms and data structures implemented in PHP: sorting, searching, graphs, recursion and dynamic programming, with examples and Chinese and English learning notes.
+
+## Simple structure
 
 ```
 ├──Package
@@ -142,9 +144,9 @@ In this case, you know how fast these algorithms are
 2. Pull Request 
 3. Merge 
 
-## 纠错
+## Report a problem
 
-If you find something wrong, you can initiate a [issue](https://github.com/PuShaoWei/designPatterns-go/issues)or [pull request](https://github.com/PuShaoWei/designPatterns-go/pulls),I will correct it in time
+If you find a problem, open an [issue](https://github.com/m9rco/algorithm-php/issues) or a [pull request](https://github.com/m9rco/algorithm-php/pulls). See the [contribution guide](CONTRIBUTING.md) for what to include.
 
 > 补充:发起pull request的commit message请参考文章[Commit message 和 Change log 编写指南](http://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html)
 
@@ -165,3 +167,4 @@ Thanks for the issue or pull request of the following friends:
   ## License
 
 MIT 
+

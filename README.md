@@ -1,26 +1,28 @@
 ​<h1 align="center">:whale: 用 PHP 的方式实现的各类算法合集 :whale: </h1>
 
 <p align="center">
-<a href="https://github.com/PuShaoWei/arithmetic-php#简易结构">
+<a href="https://github.com/m9rco/algorithm-php#简易结构">
   <img src="https://img.shields.io/badge/php-done-brightgreen.svg" alt="php">
 </a>
-<a href="https://github.com/PuShaoWei/arithmetic-php">
-    <img src="https://img.shields.io/github/issues-pr-raw/arithmetic-php/cdnjs.svg">
+<a href="https://github.com/m9rco/algorithm-php/pulls">
+    <img src="https://img.shields.io/github/issues-pr-raw/m9rco/algorithm-php.svg" alt="Open pull requests">
 </a>
-<a href="https://github.com/PuShaoWei/arithmetic-php">
-    <img src="https://img.shields.io/codacy/grade/e27821fb6289410b8f58338c7e0bc686.svg">
+<a href="https://github.com/m9rco/algorithm-php">
+    <img src="https://img.shields.io/badge/algorithms-learning%20examples-blue.svg" alt="Algorithm learning examples">
 </a>
-<a href="https://github.com/PuShaoWei/arithmetic-php">
-    <img src="https://img.shields.io/travis/rust-lang/rust.svg">
+<a href="./CONTRIBUTING.md">
+    <img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg" alt="Contributions welcome">
 </a>
-<a href="https://github.com/PuShaoWei/arithmetic-php">
-    <img src="https://img.shields.io/github/license/mashape/apistatus.svg">
+<a href="./LICENSE">
+    <img src="https://img.shields.io/github/license/m9rco/algorithm-php.svg" alt="License">
 </a>
 </p>
 
-<p align="center"> <a href="./README-EN.md">English</a>　<p>
+<p align="center"> <a href="./README-EN.md">English</a> · <a href="./CONTRIBUTING.md">贡献指南</a></p>
 
-> 每周最少一更，求出题，求虐待 At least once a week, ask for problems and abuse
+用 PHP 学习算法与数据结构，涵盖排序、查找、图、递归和动态规划，提供示例与中英文学习资料。
+
+欢迎提出算法题、修正示例或改进讲解，参与方式见[贡献指南](CONTRIBUTING.md)。
 
 ## 简易结构
 
@@ -241,7 +243,7 @@ log<sub>10</sub>100 相当于问"将多少个10相乘的结果为100"，答案�
 
 ## 纠错
 
-如果大家发现有什么不对的地方，可以发起一个[issue](https://github.com/PuShaoWei/arithmetic-php/issues)或者[pull request](https://github.com/PuShaoWei/arithmetic-php/pulls),我会及时纠正
+如果大家发现有什么不对的地方，可以发起一个[issue](https://github.com/m9rco/algorithm-php/issues)或者[pull request](https://github.com/m9rco/algorithm-php/pulls),我会及时纠正
 
 > 补充:发起pull request的commit message请参考文章[Commit message 和 Change log 编写指南](http://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html)
 
@@ -262,3 +264,4 @@ log<sub>10</sub>100 相当于问"将多少个10相乘的结果为100"，答案�
   ## License
 
 MIT
+
